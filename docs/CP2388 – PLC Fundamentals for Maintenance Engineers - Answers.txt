@@ -23,7 +23,7 @@ Version Control 16
 
 
 INTRODUCTION
-This document highlights all the answers to the questions posed in the student handout for the worksheets curriculum �CP2388 - PLC Fundamentals for Maintenance Engineers�.
+This document highlights all the answers to the questions posed in the student handout for the worksheets curriculum �CP6211 - Siemens LOGO! PLCfor Maintenance Engineers�.
 
 
 

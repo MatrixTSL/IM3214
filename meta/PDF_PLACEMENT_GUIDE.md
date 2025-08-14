@@ -6,7 +6,7 @@
 All PDF files should be placed in the `docs/` folder in your project root:
 
 ```
-PLC Fundamentals Trainer PC Companion/
+Siemens LOGO! PLC Trainer PC Companion/
 ├── docs/                          # 👈 PUT YOUR PDFs HERE
 │   ├── sample-manual.pdf         # (Replace with real manual)
 │   ├── troubleshooting.pdf       # Equipment troubleshooting guide
@@ -61,7 +61,7 @@ PLC Fundamentals Trainer PC Companion/
 ### **Step 2**: Replace in `docs/` folder
 ```bash
 # Navigate to your project folder
-cd "PLC Fundamentals Trainer PC Companion"
+cd "Siemens LOGO! PLC Trainer PC Companion"
 
 # Copy your PDFs to the docs folder
 copy "C:\path\to\your\manual.pdf" "docs\sample-manual.pdf"

@@ -1,7 +1,7 @@
-# Change Log - PLC Fundamentals v2
+# Change Log - Siemens LOGO! PLCv2
 
 ## Overview
-This document summarizes all changes made to fix various issues in the PLC Fundamentals application during this development session.
+This document summarizes all changes made to fix various issues in the Siemens LOGO! PLCapplication during this development session.
 
 ## Issues Fixed (Chronological Order)
 ________________________________________________________________________________
@@ -50,7 +50,7 @@ ________________________________________________________________________________
 
 **Files Affected**:
 - `worksheet-3.html` through `worksheet-12.html` (varies per change)
-- `docs/CP2388 – PLC Fundamentals for Maintenance Engineers - Answers.txt` (reference only)
+- `docs/CP6211 – Siemens LOGO! PLCfor Maintenance Engineers - Answers.txt` (reference only)
 
 **Solutions**:
 - Aligned Questions & Answers content to the source answers document (worksheets 2–12; 1 unchanged).

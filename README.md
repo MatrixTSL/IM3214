@@ -1,4 +1,4 @@
-# 🏭 PLC Fundamentals Trainer Training System
+# 🏭 Siemens LOGO! PLC Trainer Training System
 
 > **Inspiring the next generation of Engineers**
 
@@ -82,7 +82,7 @@ A comprehensive Progressive Web Application (PWA) for industrial maintenance tra
 ## 📋 System Structure
 
 ### 📚 Training Modules
-- **CP2388**: Industrial Maintenance Worksheets
+- **CP6211**: Industrial Maintenance Worksheets
   - System Components
   - Maintenance Procedures
   - Safety Protocols

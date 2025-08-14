@@ -11,7 +11,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="msapplication-TileColor" content="#4a9eff">
   <meta name="msapplication-TileImage" content="assets/icons/matrix-icon-192.png">
-  <title>PLC Fundamentals Trainer</title>
+  <title>Siemens LOGO! PLC Trainer</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">
@@ -707,7 +707,7 @@
       <div class="loading-bar">
         <div class="loading-progress"></div>
       </div>
-      <div class="loading-text">Initializing Matrix TSL PLC Fundamentals Trainer Training Platform...</div>
+      <div class="loading-text">Initializing Matrix TSL Siemens LOGO! PLC Trainer Training Platform...</div>
     </div>
   </div>
 
@@ -720,7 +720,7 @@
       <div class="hero-content">
         <div class="hero-intro">
           <div class="hero-text">
-            <h1 class="hero-title">PLC Fundamentals Trainer</h1>
+            <h1 class="hero-title">Siemens LOGO! PLC Trainer</h1>
                          <p class="hero-subtitle">
                Hands-on training platform designed specifically for those new to industrial maintenance and automation. 
                Features a Siemens S7-1214 PLC and 7-inch Unified Basic HMI with real-world components and industrial wiring standards.
@@ -730,7 +730,7 @@
             </button>
           </div>
           <div class="hero-image">
-            <img src="assets/cad.png" alt="PLC Fundamentals Training System" class="hero-cad-image">
+            <img src="assets/cad.png" alt="Siemens LOGO! PLCTraining System" class="hero-cad-image">
           </div>
         </div>
       </div>
@@ -738,39 +738,39 @@
 
          <!-- FEATURES SECTION -->
      <div class="features-section">
-               <div class="feature-card main-feature" onclick="navigateToCP2388()">
+               <div class="feature-card main-feature" onclick="navigateToCP6211()">
           <div class="feature-icon">
             <i class="fas fa-cogs"></i>
           </div>
           <div class="feature-content">
-                         <h3>CP2388 - PLC Fundamentals</h3>
+                         <h3>CP6211 - PLC Fundamentals</h3>
              <p>12 structured worksheets covering PLC systems, HMIs, emergency stops, sensors, relays, and industrial components.</p>
             <span class="feature-badge">Primary Curriculum</span>
-                         <button class="start-here-btn" onclick="event.stopPropagation(); navigateToCP2388()">
+                         <button class="start-here-btn" onclick="event.stopPropagation(); navigateToCP6211()">
               <i class="fas fa-play"></i> Start Here
             </button>
           </div>
         </div>
 
        <div class="features-grid">
-                   <div class="feature-card" onclick="openPDF('docs/CP2388 – PLC Fundamentals for Maintenance Engineers.pdf')">
+                   <div class="feature-card" onclick="openPDF('docs/CP6211 – Siemens LOGO! PLCfor Maintenance Engineers.pdf')">
             <div class="feature-icon">
               <i class="fas fa-cogs"></i>
             </div>
             <div class="feature-content">
               <h3>Curriculum Guide</h3>
-              <p>Complete CP2388 curriculum documentation and learning objectives.</p>
-              <span class="feature-badge">CP2388</span>
+              <p>Complete CP6211 curriculum documentation and learning objectives.</p>
+              <span class="feature-badge">CP6211</span>
             </div>
           </div>
 
-                   <div class="feature-card" onclick="openPDF('docs/IM6930 - PLC Fundamentals Trainer User Manual.pdf')">
+                   <div class="feature-card" onclick="openPDF('docs/IM6930 - Siemens LOGO! PLC Trainer User Manual.pdf')">
             <div class="feature-icon">
               <i class="fas fa-book"></i>
             </div>
             <div class="feature-content">
               <h3>User Manual</h3>
-              <p>Comprehensive user manual for the IM6930 PLC Fundamentals Trainer.</p>
+              <p>Comprehensive user manual for the IM6930 Siemens LOGO! PLC Trainer.</p>
               <span class="feature-badge">IM6930</span>
             </div>
           </div>
@@ -813,22 +813,22 @@
        }
      }
      
-           // CP2388 Navigation Function with error handling
-      function navigateToCP2388() {
-        console.log('navigateToCP2388 function called!');
+           // CP6211 Navigation Function with error handling
+      function navigateToCP6211() {
+        console.log('navigateToCP6211 function called!');
         try {
-          console.log('Attempting to navigate to CP2388 worksheets...');
-          window.location.href = 'CP2388-worksheets.html';
+          console.log('Attempting to navigate to CP6211 worksheets...');
+          window.location.href = 'CP6211-worksheets.html';
         } catch (error) {
           console.error('Navigation error:', error);
           // Fallback: try alternative methods
           try {
-            window.location = 'CP2388-worksheets.html';
+            window.location = 'CP6211-worksheets.html';
           } catch (fallbackError) {
             console.error('Fallback navigation also failed:', fallbackError);
             // Last resort: create a link and click it
             const link = document.createElement('a');
-            link.href = 'CP2388-worksheets.html';
+            link.href = 'CP6211-worksheets.html';
             link.click();
           }
         }

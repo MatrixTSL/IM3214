@@ -1,7 +1,7 @@
 {
   "name": "matrix-training-platform",
   "version": "1.0.5",
-  "description": "Matrix Training Platform for PLC Fundamentals Trainer Curriculum",
+  "description": "Matrix Training Platform for Siemens LOGO! PLC Trainer Curriculum",
   "main": "index.html",
   "scripts": {
     "start": "echo 'No Electron. Open index.html in browser.'",

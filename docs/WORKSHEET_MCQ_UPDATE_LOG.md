@@ -2,7 +2,7 @@
 
 Purpose: Track changes made to the Multiple Choice Questions (MCQs) across worksheets to align with the course answers, hide simulations after Q&A, and distribute correct options fairly across A–D.
 
-Source of truth for questions/answers: `docs/CP2388 – PLC Fundamentals for Maintenance Engineers - Answers.txt`
+Source of truth for questions/answers: `docs/CP6211 – Siemens LOGO! PLCfor Maintenance Engineers - Answers.txt`
 
 ## Completed work
 

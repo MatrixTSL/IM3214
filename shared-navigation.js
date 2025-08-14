@@ -16,8 +16,8 @@ function createSharedNavigation() {
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" onclick="window.location='CP2388-worksheets.html'" class="nav-link" id="nav-cp2388">
-              <i class="fas fa-cogs"></i> CP2388
+            <a href="#" onclick="window.location='CP6211-worksheets.html'" class="nav-link" id="nav-CP6211">
+              <i class="fas fa-cogs"></i> CP6211
             </a>
           </li>
           <li class="nav-item">
@@ -57,8 +57,8 @@ function setActiveNavigationItem() {
     case 'index.html':
       document.getElementById('nav-home')?.classList.add('active');
       break;
-    case 'CP2388-worksheets.html':
-      document.getElementById('nav-cp2388')?.classList.add('active');
+    case 'CP6211-worksheets.html':
+      document.getElementById('nav-CP6211')?.classList.add('active');
       break;
     case 'tracking-dashboard.html':
       document.getElementById('nav-progress')?.classList.add('active');
@@ -69,7 +69,7 @@ function setActiveNavigationItem() {
     default:
       // If no specific match, check if it's a worksheet page
       if (currentPage.includes('worksheet-')) {
-        document.getElementById('nav-cp2388')?.classList.add('active');
+        document.getElementById('nav-CP6211')?.classList.add('active');
       } else {
         document.getElementById('nav-home')?.classList.add('active');
       }

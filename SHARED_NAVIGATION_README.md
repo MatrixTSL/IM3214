@@ -40,10 +40,10 @@ Make sure your page includes the navigation CSS styles (either in `main.css` or 
 The shared navigation automatically detects which page is currently active and highlights the correct navigation item. It works with:
 
 - `index.html` → HOME
-- `CP2388-worksheets.html` → CP2388
+- `CP6211-worksheets.html` → CP6211
 - `tracking-dashboard.html` → PROGRESS
 - `about.html` → ABOUT
-- Any `worksheet-*.html` → CP2388 (automatically)
+- Any `worksheet-*.html` → CP6211 (automatically)
 
 ## Example Implementation
 
@@ -85,7 +85,7 @@ Here's how to implement it on a new page:
 ## Files Updated
 
 - ✅ `index.html` - Now uses shared navigation
-- ✅ `CP2388-worksheets.html` - Now uses shared navigation
+- ✅ `CP6211-worksheets.html` - Now uses shared navigation
 - 🔄 Other pages can be updated similarly
 
 ## Next Steps
