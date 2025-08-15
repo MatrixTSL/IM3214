@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix TSL - Normally Open vs Normally Closed</title>
+  <meta name="viewport" content="width=device-width, ini            <h3>Variabl            <h3>Practical Applications</h3>
+          </div>
+          <div class="card-content">
+            <p>Potentiometers are commonly used in electrical control panels to set current limits, adjust conveyor speeds, control lighting levels, and set temperature thresholds in industrial systems.</p>put Control</h3>
+          </div>
+          <div class="card-content">
+            <p>In industrial maintenance, digital inputs are often enough for basic control tasks like detecting switches or sensors. But when setting values such as motor speed, pressure limits, or temperature targets, a variable input is required.</p>-scale=1.0">
+  <title>Matrix TSL - Potentiometers</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">    <script src="worksheet-core.js"></script>
@@ -24,7 +30,7 @@
           </button>
         </div>
         <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 6 - Normally Open vs Normally Closed</h1>
+          <h1 class="worksheet-title">Worksheet 6 - Potentiometers</h1>
         </div>
         <div class="worksheet-header-right">
           <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-7.html'">
@@ -39,11 +45,11 @@
       <div class="worksheet-content">
         <div class="introduction-content-wrapper">
           <div class="introduction-text">
-            <p>Push buttons or control contacts can be normally open (NO) or normally closed (NC). A NO contact only sends a signal when pressed, while an NC contact is active until it is pressed. This difference helps ensure safe and reliable control in industrial automation systems.</p>
+            <p>A switch typically sends either a 24V or 0V signal to a controller input. A potentiometer, on the other hand, provides a variable voltage between 0V and 24V. Potentiometers are useful for setting values like light level, conveyor speed, or room temperature.</p>
           </div>
           <div class="introduction-image">
             <div class="system-diagram">
-              <img src="assets/maintenance/ws6.png" alt="Pump System Maintenance">
+              <img src="assets/maintenance/ws6.png" alt="Potentiometer Control System">
             </div>
           </div>
         </div>
@@ -54,20 +60,20 @@
     <div class="worksheet-section over-to-you-section">
       <h2 class="section-header"><i class="fas fa-hands-helping"></i> 2. Over To You</h2>
       <div class="worksheet-content">
-        <p><strong>Follow these steps to explore NO vs NC inputs:</strong></p>
+        <p><strong>Follow these steps to explore potentiometer control:</strong></p>
 
         <div class="steps-container">
           <div class="step-card" data-step="1">
             <div class="step-number">1</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Open Worksheet 6</h4>
+                <h4>Build the Potentiometer System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Navigate to Worksheet 6 on the HMI. Green text means input is on; white is off.</p>
+              <p>Build the system as shown in the diagram. Connect the potentiometer to provide variable voltage input to the controller.</p>
             </div>
           </div>
 
@@ -75,13 +81,13 @@
             <div class="step-number">2</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>I0 (NO)</h4>
+                <h4>Measure Voltage Range</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press and hold the green button (I0). Observe I0 turning on only while pressed.</p>
+              <p>Measure the range of voltages provided by the potentiometer at the controller input as you turn the dial from minimum to maximum.</p>
             </div>
           </div>
 
@@ -89,13 +95,13 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>I1 (NO)</h4>
+                <h4>Set Voltage Thresholds</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press and hold the black button (I1). Observe I1 turns on only while held.</p>
+              <p>Suppose this is a heater control. Set an acceptable range of 0V to 5V where the green LED should be on. Above 5V, the green LED should be off and red LED on.</p>
             </div>
           </div>
 
@@ -103,41 +109,13 @@
             <div class="step-number">4</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>I2 (NC)</h4>
+                <h4>Load Program 6</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Observe I2 is on by default because it is NC. Press it and confirm it turns off while pressed.</p>
-            </div>
-          </div>
-
-          <div class="step-card" data-step="5">
-            <div class="step-number">5</div>
-            <div class="step-content">
-              <div class="step-header">
-                <h4>I3 (NO, Latching)</h4>
-                <label class="step-checkbox">
-                  <input type="checkbox" class="step-complete-checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-              <p>Press I3 once to latch it on. Press again to turn it off.</p>
-            </div>
-          </div>
-
-          <div class="step-card" data-step="6">
-            <div class="step-number">6</div>
-            <div class="step-content">
-              <div class="step-header">
-                <h4>I4/I5 (3-position switch)</h4>
-                <label class="step-checkbox">
-                  <input type="checkbox" class="step-complete-checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-              <p>Move the selector left: I4 on, I5 off. Middle: both off. Right: I4 off, I5 on.</p>
+              <p>Load Program 6 to give the controller this functionality. Test the system by adjusting the potentiometer and observing LED behavior.</p>
             </div>
           </div>
         </div>
@@ -161,10 +139,10 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-plug"></i>
-            <h3>Where NO and NC are used</h3>
+            <h3>Direct Panel Adjustment</h3>
           </div>
           <div class="card-content">
-            <p>Start/stop buttons, selector switches, float switches, and guards use NO or NC contacts. Safety devices are often NC so a broken wire triggers a fault (failsafe).</p>
+            <p>A common and simple method is to use a dial, typically a potentiometer, which allows maintenance teams to adjust settings directly on the panel without needing to access the software.</p>
           </div>
         </div>
 
@@ -185,10 +163,11 @@
     <div class="worksheet-section key-takeaways-section">
       <h2 class="section-header"><i class="fas fa-list-check"></i> Key Takeaways</h2>
       <ul>
-        <li>Normally Open (NO): off until pressed.</li>
-        <li>Normally Closed (NC): on until pressed.</li>
-        <li>Knowing expected I/O states helps spot faults quickly.</li>
-        <li>Misreading NO/NC can lead to unnecessary troubleshooting.</li>
+        <li>Potentiometers provide variable voltage between 0V and 24V.</li>
+        <li>Variable inputs are essential for setting operational parameters.</li>
+        <li>Direct panel adjustment improves maintenance efficiency.</li>
+        <li>Voltage thresholds can trigger different system responses.</li>
+        <li>Analogue inputs enable precise control in industrial systems.</li>
       </ul>
     </div>
 
@@ -196,114 +175,114 @@
       <h2 class="section-header"><i class="fas fa-question-circle"></i> Questions & Answers</h2>
       <div class="questions-content">
         <div class="question-item" data-question="1">
-          <h4>Question 1: What is the difference between a normally open (NO) and normally closed (NC) contact?</h4>
+          <h4>Question 1: What type of signal does a potentiometer provide compared to a switch?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-1" value="A" class="option-radio">
-              <span class="option-text">A) NO is always on; NC is always off</span>
+              <span class="option-text">A) Digital signal only</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="B" class="option-radio">
-              <span class="option-text">B) An NO contact is off until pressed, while an NC contact is on until pressed</span>
+              <span class="option-text">B) Variable voltage between 0V and 24V, unlike a switch which provides 24V or 0V</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="C" class="option-radio">
-              <span class="option-text">C) NO measures temperature; NC measures pressure</span>
+              <span class="option-text">C) Fixed 12V signal</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="D" class="option-radio">
-              <span class="option-text">D) There is no difference</span>
+              <span class="option-text">D) No signal at all</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(1)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> B) An NO contact is off until pressed, while an NC contact is on until pressed.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) Variable voltage between 0V and 24V, unlike a switch which provides 24V or 0V.
           </div>
         </div>
         
         <div class="question-item" data-question="2">
-          <h4>Question 2: What does green text on the HMI input screen mean?</h4>
+          <h4>Question 2: What are potentiometers commonly used for in industrial systems?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-2" value="A" class="option-radio">
-              <span class="option-text">A) It shows the time of day</span>
+              <span class="option-text">A) Only for decoration</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="B" class="option-radio">
-              <span class="option-text">B) Green means the input is off</span>
+              <span class="option-text">B) Measuring time</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="C" class="option-radio">
-              <span class="option-text">C) Green means the input is currently on; white means it is off</span>
+              <span class="option-text">C) Setting values like light level, conveyor speed, or room temperature</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="D" class="option-radio">
-              <span class="option-text">D) It shows battery level</span>
+              <span class="option-text">D) Storing data</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(2)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> C) Green means the input is currently on; white means it is off.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> C) Setting values like light level, conveyor speed, or room temperature.
           </div>
         </div>
         
         <div class="question-item" data-question="3">
-          <h4>Question 3: How does Input 2 behave when not pressed?</h4>
+          <h4>Question 3: What advantage do potentiometers provide to maintenance teams?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-3" value="A" class="option-radio">
-              <span class="option-text">A) It stays off by default</span>
+              <span class="option-text">A) They make systems more complex</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="B" class="option-radio">
-              <span class="option-text">B) It stays on by default and turns off when the red button is pressed</span>
+              <span class="option-text">B) They allow direct panel adjustment without needing to access software</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="C" class="option-radio">
-              <span class="option-text">C) It flashes randomly</span>
+              <span class="option-text">C) They require special tools</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="D" class="option-radio">
-              <span class="option-text">D) It has no effect</span>
+              <span class="option-text">D) They only work with new equipment</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(3)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> B) It stays on by default and turns off when the red button is pressed.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) They allow direct panel adjustment without needing to access software.
           </div>
         </div>
         
         <div class="question-item" data-question="4">
-          <h4>Question 4: What happens to Input 3 when it is pressed and released?</h4>
+          <h4>Question 4: In the heater control example, what happens when the voltage exceeds 5V?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-4" value="A" class="option-radio">
-              <span class="option-text">A) Nothing happens</span>
+              <span class="option-text">A) The system shuts down completely</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="B" class="option-radio">
-              <span class="option-text">B) It turns off a timer</span>
+              <span class="option-text">B) Nothing changes</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="C" class="option-radio">
-              <span class="option-text">C) It changes colour</span>
+              <span class="option-text">C) The green LED turns off and the red LED turns on</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="D" class="option-radio">
-              <span class="option-text">D) It latches on when pressed and stays on until pressed again</span>
+              <span class="option-text">D) Both LEDs flash</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(4)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> D) It latches on when pressed and stays on until pressed again.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> C) The green LED turns off and the red LED turns on.
           </div>
         </div>
         

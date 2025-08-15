@@ -2,8 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix TSL - Status LED</title>
+  <meta name="viewport" content="width=device-width, i        <div class="explanation-card">
+          <div class="card-header">
+            <i class="fas fa-cogs"></i>
+            <h3>Timer-Based Control Systems</h3>
+          </div>
+          <div class="card-content">
+            <p>This system relies heavily on timers, which are a core element in industrial control. Timers are used to manage delays, enforce safety pauses, and coordinate the sequence of events. Whether you're handling traffic lights or machine operations, understanding how timers operate is essential for reliable and safe system behavior during maintenance.</p>
+          </div>
+        </div>ale=1.0">
+  <title>Matrix TSL - Pedestrian Crossing</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">
@@ -24,7 +32,7 @@
           </button>
         </div>
         <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 5 - Status LED</h1>
+          <h1 class="worksheet-title">Worksheet 5 - Pedestrian Crossing</h1>
         </div>
         <div class="worksheet-header-right">
           <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-6.html'">
@@ -39,11 +47,11 @@
       <div class="worksheet-content">
         <div class="introduction-content-wrapper">
           <div class="introduction-text">
-            <p>The Status LED shows what the system is doing. It lights up in different colours to show if things are working normally or if there is a problem. This makes it easier for maintenance teams to spot issues early, fix them quickly, and keep the system running safely and reliably.</p>
+            <p>By combining the previous worksheets, we can now create a fully-functional pedestrian crossing system. In this system, the green light allows traffic to flow until a pedestrian presses a switch to request crossing. The controller then manages a timed sequence: green to amber (5 seconds), then red to stop traffic. A pedestrian green light flashes for 30 seconds, followed by red and amber together (5 seconds) before returning to green for traffic flow.</p>
           </div>
           <div class="introduction-image">
             <div class="system-diagram">
-              <img src="assets/maintenance/ws5.png" alt="HMI System Maintenance">
+              <img src="assets/maintenance/ws5.png" alt="Pedestrian Crossing System">
             </div>
           </div>
         </div>
@@ -54,20 +62,20 @@
     <div class="worksheet-section over-to-you-section">
       <h2 class="section-header"><i class="fas fa-hands-helping"></i> 2. Over To You</h2>
       <div class="worksheet-content">
-        <p><strong>Follow these steps to explore the Status LED:</strong></p>
+        <p><strong>Follow these steps to build and test the pedestrian crossing system:</strong></p>
 
         <div class="steps-container">
           <div class="step-card" data-step="1">
             <div class="step-number">1</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Open Worksheet 5</h4>
+                <h4>Build the Crossing System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Navigate to Worksheet 5 on the HMI and locate the Status LED on your training system.</p>
+              <p>Connect the traffic light LEDs (red, amber, green) and pedestrian lights to your Matrix PLC LOGO! Module. Include a push button for pedestrian crossing requests.</p>
             </div>
           </div>
 
@@ -75,13 +83,13 @@
             <div class="step-number">2</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Basic Mode</h4>
+                <h4>Sketch the Flow Chart</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Turn on the Basic Mode switch. Note the LED colour on-screen and on the physical rig (green for healthy, red for fault).</p>
+              <p>Create a complete flow chart for your program showing the sequence: Green → Amber (5s) → Red → Pedestrian Green (30s) → Red+Amber (5s) → Green.</p>
             </div>
           </div>
 
@@ -89,13 +97,13 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>E-Stop Check</h4>
+                <h4>Load Program 5</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press the E-Stop and observe the change in LED colour. Reset the E-Stop and confirm the LED returns to normal.</p>
+              <p>Use LOGO! Soft Comfort to load Program 5, which controls the three main signal lights and pedestrian crossing according to the timed sequence described above.</p>
             </div>
           </div>
 
@@ -103,29 +111,16 @@
             <div class="step-number">4</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Enhanced Mode</h4>
+                <h4>Test the System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Turn off Basic Mode and enable Enhanced Mode. Press Start and observe how the Status LED behaves with the motor running. Stop the motor when done.</p>
+              <p>Press the pedestrian crossing button and observe the complete light sequence. Use the LOGO! PLC's screen to monitor the status of each light, including the pedestrian walk signal.</p>
             </div>
           </div>
 
-          <div class="step-card" data-step="5">
-            <div class="step-number">5</div>
-            <div class="step-content">
-              <div class="step-header">
-                <h4>Live Process</h4>
-                <label class="step-checkbox">
-                  <input type="checkbox" class="step-complete-checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-              <p>Enable Live Process Mode. Start the process and observe the LED while bottles pass on the conveyor. Activate Fast Processing and note LED behaviour for OK vs defective bottles.</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -147,20 +142,20 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-eye"></i>
-            <h3>Reading the LED correctly</h3>
+            <h3>State Machine Implementation</h3>
           </div>
           <div class="card-content">
-            <p>Green usually means normal, yellow means warning, and red means a fault. Flashing often shows an active condition or a more urgent state. Always confirm with the HMI or manual.</p>
+            <p>The pedestrian crossing demonstrates a complex state machine where each state has specific duration and transitions. This pattern is fundamental in industrial automation for controlling sequential processes, safety systems, and coordinated equipment operations.</p>
           </div>
         </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-toolbox"></i>
-            <h3>Using LEDs for diagnosis</h3>
+            <h3>Combining Previous Concepts</h3>
           </div>
           <div class="card-content">
-            <p>If the LED changes to warning or fault, check recent alarms, IO status, and what just changed in the process. Use the LED as a quick starting point, not the only check.</p>
+            <p>This worksheet combines basic outputs (from Worksheet 1), sequenced outputs (Worksheet 2), and digital inputs (Worksheet 4) into a practical application. Understanding how these elements work together is crucial for troubleshooting complex automated systems.</p>
           </div>
         </div>
       </div>
@@ -171,12 +166,12 @@
     <div class="worksheet-section key-takeaways-section">
       <h2 class="section-header"><i class="fas fa-list-check"></i> Key Takeaways</h2>
       <ul>
-        <li>Status LEDs show machine state at a glance.</li>
-        <li>Colours and flash rates mean different things.</li>
-        <li>Modes shown here are examples, not official standards.</li>
-        <li>Always check the machine manual and HMI.</li>
-        <li>LED behaviour is set in the PLC program.</li>
-        <li>Understanding LEDs helps with fault finding.</li>
+        <li>Pedestrian crossings use timed sequences for safety.</li>
+        <li>Timer-based control is fundamental in industrial automation.</li>
+        <li>State machines coordinate complex sequential operations.</li>
+        <li>Each state has specific duration and transition conditions.</li>
+        <li>Digital inputs can interrupt or modify automated sequences.</li>
+        <li>Understanding timing relationships is crucial for troubleshooting.</li>
       </ul>
     </div>
 
@@ -184,114 +179,117 @@
       <h2 class="section-header"><i class="fas fa-question-circle"></i> Questions & Answers</h2>
       <div class="questions-content">
         <div class="question-item" data-question="1">
-          <h4>Question 1: What is the purpose of the status LED in a PLC system?</h4>
+          <h4>Question 1: Why do pedestrian crossings use timed sequences?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-1" value="A" class="option-radio">
-              <span class="option-text">A) To measure system temperature</span>
+              <span class="option-text">A) To save energy</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="B" class="option-radio">
-              <span class="option-text">B) To control the system automatically</span>
+              <span class="option-text">B) To provide adequate time for pedestrians to cross safely while managing traffic flow</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="C" class="option-radio">
-              <span class="option-text">C) To provide power to the system</span>
+              <span class="option-text">C) To make the lights change randomly</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="D" class="option-radio">
-              <span class="option-text">D) It shows the current state of the system using colours, helping identify faults or normal operation</span>
+              <span class="option-text">D) To control system temperature</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(1)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> D) It shows the current state of the system using colours, helping identify faults or normal operation.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) To provide adequate time for pedestrians to cross safely while managing traffic flow.
           </div>
         </div>
         
         <div class="question-item" data-question="2">
-          <h4>Question 2: What does a red status LED usually mean?</h4>
+          <h4>Question 2: What is a state machine in PLC control?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-2" value="A" class="option-radio">
-              <span class="option-text">A) It often means there is a fault or the emergency stop has been pressed</span>
+              <span class="option-text">A) A method of controlling sequential operations where each state has specific conditions and transitions</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="B" class="option-radio">
-              <span class="option-text">B) It means the system is operating normally</span>
+              <span class="option-text">B) A type of motor controller</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="C" class="option-radio">
-              <span class="option-text">C) It means the system is starting up</span>
+              <span class="option-text">C) A hardware component for powering the PLC</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="D" class="option-radio">
-              <span class="option-text">D) It means the system is shutting down</span>
+              <span class="option-text">D) A programming language</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(2)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> A) It often means there is a fault or the emergency stop has been pressed.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) A method of controlling sequential operations where each state has specific conditions and transitions.
           </div>
         </div>
         
         <div class="question-item" data-question="3">
-          <h4>Question 3: What does a green status LED usually mean?</h4>
+          <h4>Question 3: In the pedestrian crossing, what triggers the sequence change?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-3" value="A" class="option-radio">
-              <span class="option-text">A) It usually means there is a fault</span>
+              <span class="option-text">A) Temperature changes</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="B" class="option-radio">
-              <span class="option-text">B) It usually means the system is healthy and ready or running normally</span>
+              <span class="option-text">B) The pedestrian push button and timer expiration</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="C" class="option-radio">
-              <span class="option-text">C) It means the system is shutting down</span>
+              <span class="option-text">C) Power variations</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="D" class="option-radio">
               <span class="option-text">D) It means the system is starting up</span>
+            <label class="option-label">
+              <input type="radio" name="question-3" value="D" class="option-radio">
+              <span class="option-text">D) Random timing</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(3)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> B) It usually means the system is healthy and ready or running normally.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) The pedestrian push button and timer expiration.
           </div>
         </div>
         
         <div class="question-item" data-question="4">
-          <h4>Question 4: How does the status LED change across Basic, Enhanced, and Live Process modes?</h4>
+          <h4>Question 4: Why are timers essential in industrial automation?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-4" value="A" class="option-radio">
-              <span class="option-text">A) It stays the same colour always</span>
+              <span class="option-text">A) They only control LED brightness</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="B" class="option-radio">
-              <span class="option-text">B) It stays the same colour always</span>
+              <span class="option-text">B) They manage delays, enforce safety pauses, and coordinate sequential operations</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="C" class="option-radio">
-              <span class="option-text">C) It may show solid or flashing patterns based on system state, like startup, running, or fault</span>
+              <span class="option-text">C) They are not important in automation</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="D" class="option-radio">
-              <span class="option-text">D) It only flashes red</span>
+              <span class="option-text">D) They only work with specific brands of PLCs</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(4)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> C) It may show solid or flashing patterns based on system state, like startup, running, or fault.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) They manage delays, enforce safety pauses, and coordinate sequential operations.
           </div>
         </div>
         

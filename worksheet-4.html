@@ -2,8 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix TSL - Emergency Stops</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">            <h3>Input Types and Compatibi          <h4>Question 1: What are the two main types of industrial sensors?</h4>
+          <div class="multiple-choice-options">
+            <label class="option-label">
+              <input type="radio" name="question-1" value="A" class="option-radio">
+              <span class="option-text">A) Large and small sensors</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-1" value="B" class="option-radio">
+              <span class="option-text">B) Analogue and digital sensors</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-1" value="C" class="option-radio">
+              <span class="option-text">C) Fast and slow sensors</span>
+            </label>       </div>
+          <div class="card-content">
+            <p>Always check the input type before connecting or replacing a sensor to avoid signal errors. Digital inputs typically operate at 24V DC and provide clear on/off states. Some modern controllers have configurable inputs that can be set as either digital or analogue depending on the application requirements.</p>title>Matrix TSL - Basic Inputs</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">
@@ -29,7 +43,7 @@
           </button>
         </div>
         <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 4 - Emergency Stops</h1>
+          <h1 class="worksheet-title">Worksheet 4 - Basic Inputs</h1>
         </div>
         <div class="worksheet-header-right">
           <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-5.html'">
@@ -45,11 +59,11 @@
       <div class="worksheet-content">
         <div class="introduction-content-wrapper">
           <div class="introduction-text">
-            <p>An Emergency Stop (E-Stop) is a safety button that quickly stops a machine or system when there is an emergency. It helps keep people safe and prevents damage to equipment. An E-Stop is not the same as a normal stop button. It should only be used in emergencies, not to turn off the machine during normal use.</p>
+            <p>Industrial sensors can be divided into two main types: analogue and digital. Digital sensors have a two-state output, typically 'on' (24V) or 'off' (0V). Some modern controllers have separate analogue and digital inputs, while others have configurable inputs that can be set as either type. Understanding the difference between these input types is essential for proper sensor selection and maintenance in industrial systems.</p>
           </div>
           <div class="introduction-image">
             <div class="system-diagram">
-              <img src="assets/maintenance/ws4.png" alt="PLC System Maintenance">
+              <img src="assets/maintenance/ws4.png" alt="Digital Input Sensors">
             </div>
           </div>
         </div>
@@ -60,20 +74,20 @@
     <div class="worksheet-section over-to-you-section">
       <h2 class="section-header"><i class="fas fa-hands-helping"></i> 2. Over To You</h2>
       <div class="worksheet-content">
-        <p><strong>Follow these steps to work with the Emergency Stop:</strong></p>
+        <p><strong>Follow these steps to work with digital input sensors:</strong></p>
 
         <div class="steps-container">
           <div class="step-card" data-step="1">
             <div class="step-number">1</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Open Worksheet 4</h4>
+                <h4>Build the Digital Input System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Navigate to Worksheet 4 on the HMI. This is the same system as Worksheet 3, with fewer items on screen so you can focus on the E-Stop.</p>
+              <p>Connect three different types of digital switches to your Matrix PLC LOGO! Module inputs. Use various switch types such as push buttons, toggle switches, and proximity sensors if available.</p>
             </div>
           </div>
 
@@ -81,13 +95,13 @@
             <div class="step-number">2</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Find the E-Stop</h4>
+                <h4>Load Program 4</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Locate the Emergency Stop button at the top of your training rig.</p>
+              <p>Use LOGO! Soft Comfort to load Program 4, which reads the digital state of the switches where 'pressed' or 'activated' equals 'ON' and displays their status.</p>
             </div>
           </div>
 
@@ -95,13 +109,13 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Start and Stop</h4>
+                <h4>Test Switch States</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Start the mix. When the tank is about half full, press the E-Stop.</p>
+              <p>Activate each switch and observe how the corresponding output LEDs respond. Notice how each switch operates differently - momentary vs. maintained contact.</p>
             </div>
           </div>
 
@@ -109,57 +123,16 @@
             <div class="step-number">4</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Alarm Banner</h4>
+                <h4>Monitor Input Status</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Read the alarm banner at the bottom of the screen. Tap it to go to the Alarm page and find the E-Stop alarm in the table.</p>
+              <p>Use the LOGO! PLC's screen to view the status of each input. Notice that this time the display shows input states rather than output states.</p>
             </div>
           </div>
 
-          <div class="step-card" data-step="5">
-            <div class="step-number">5</div>
-            <div class="step-content">
-              <div class="step-header">
-                <h4>Reset Procedure</h4>
-                <label class="step-checkbox">
-                  <input type="checkbox" class="step-complete-checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-              <p>Twist the E-Stop left to reset it, then press the blue reset button. Confirm that the E-Stop alarm is cleared.</p>
-            </div>
-          </div>
-
-          <div class="step-card" data-step="6">
-            <div class="step-number">6</div>
-            <div class="step-content">
-              <div class="step-header">
-                <h4>Check Faults Page</h4>
-                <label class="step-checkbox">
-                  <input type="checkbox" class="step-complete-checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-              <p>Go back to Main Menu → Faults page. Confirm the E-Stop fault is cleared.</p>
-            </div>
-          </div>
-
-          <div class="step-card" data-step="7">
-            <div class="step-number">7</div>
-            <div class="step-content">
-              <div class="step-header">
-                <h4>Repeat and Reset on HMI</h4>
-                <label class="step-checkbox">
-                  <input type="checkbox" class="step-complete-checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-              <p>Press the E-Stop again and observe the fault on the Faults page. This time, reset the system using the Reset button on the HMI.</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -171,10 +144,10 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-cogs"></i>
-            <h3>Why this matters</h3>
+            <h3>Digital vs Analogue Inputs</h3>
           </div>
           <div class="card-content">
-            <p>E-Stops have dual channels or two inputs into the control system, to make them reliable and safe. After using an E-Stop, the emergency stop button must be reset and the reset button must be pressed once before the system can start again. Regularly inspect the E-Stop for damage or loose parts and test it during downtime to ensure it functions properly. Never cover or tamper with one.</p>
+            <p>The three switches in this worksheet operate differently, which is important to understand during maintenance. Some controllers accept both analogue and digital signals on the same input, while others use opto-isolated inputs that only accept digital signals. Digital inputs provide discrete on/off states, making them ideal for switches, buttons, and proximity sensors.</p>
           </div>
         </div>
 
@@ -191,10 +164,10 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-screwdriver-wrench"></i>
-            <h3>Maintenance tips</h3>
+            <h3>Maintenance Considerations</h3>
           </div>
           <div class="card-content">
-            <p>Check the button latches and releases cleanly, terminals are tight, and inputs change on the PLC/HMI when pressed. Test during planned downtime and record results.</p>
+            <p>When troubleshooting digital inputs, check for proper voltage levels, secure connections, and correct sensor operation. Different switch types behave differently - understanding momentary vs. maintained contacts is crucial for proper system operation and fault diagnosis.</p>
           </div>
         </div>
       </div>
@@ -205,10 +178,12 @@
     <div class="worksheet-section key-takeaways-section">
       <h2 class="section-header"><i class="fas fa-list-check"></i> Key Takeaways</h2>
       <ul>
-        <li>E-Stops are for emergencies, not regular use.</li>
-        <li>They have two safety circuits to make sure they work.</li>
-        <li>Manual reset is required before restart.</li>
-        <li>Regular checks and tests keep them reliable.</li>
+        <li>Digital inputs provide discrete on/off states, typically at 24V DC.</li>
+        <li>Different switch types operate differently - momentary vs. maintained contacts.</li>
+        <li>Some controllers have separate digital and analogue inputs, others are configurable.</li>
+        <li>Always verify input type compatibility before connecting sensors.</li>
+        <li>Digital inputs are ideal for switches, buttons, and proximity sensors.</li>
+        <li>Input status monitoring is essential for troubleshooting and maintenance.</li>
       </ul>
     </div>
 
@@ -233,126 +208,126 @@
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="D" class="option-radio">
-              <span class="option-text">D) To save energy during idle times</span>
+              <span class="option-text">D) Hot and cold sensors</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(1)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> B) To stop the machine immediately in an emergency to keep people safe and protect equipment.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) Analogue and digital sensors.
           </div>
         </div>
         
         <div class="question-item" data-question="2">
-          <h4>Question 2: How is an E-Stop different from a normal stop button?</h4>
+          <h4>Question 2: What voltage levels typically represent 'on' and 'off' states in digital inputs?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-2" value="A" class="option-radio">
-              <span class="option-text">A) To pause the machine for breaks</span>
+              <span class="option-text">A) 120V (on) and 0V (off)</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="B" class="option-radio">
-              <span class="option-text">B) They are the same</span>
+              <span class="option-text">B) 5V (on) and 0V (off)</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="C" class="option-radio">
-              <span class="option-text">C) A normal stop is used for routine stops; E-Stop is for emergencies</span>
+              <span class="option-text">C) 24V (on) and 0V (off)</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="D" class="option-radio">
-              <span class="option-text">D) A normal stop is illegal to use</span>
+              <span class="option-text">D) 240V (on) and 0V (off)</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(2)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> C) A normal stop is used for routine stops; E-Stop is for emergencies.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> C) 24V (on) and 0V (off).
           </div>
         </div>
         
         <div class="question-item" data-question="3">
-          <h4>Question 3: What happens when you press the E-Stop during the mixing process?</h4>
+          <h4>Question 3: What is the key difference between digital and analogue inputs?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-3" value="A" class="option-radio">
-              <span class="option-text">A) The system speeds up</span>
+              <span class="option-text">A) Digital inputs have two states (on/off), analogue inputs have continuous voltage ranges</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="B" class="option-radio">
-              <span class="option-text">B) The system stops, an alarm appears, and mixing is halted until reset</span>
+              <span class="option-text">B) Digital inputs are newer technology</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="C" class="option-radio">
-              <span class="option-text">C) Nothing happens</span>
+              <span class="option-text">C) Analogue inputs are faster</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="D" class="option-radio">
-              <span class="option-text">D) The process continues as normal</span>
+              <span class="option-text">D) There is no difference</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(3)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> B) The system stops, an alarm appears, and mixing is halted until reset.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) Digital inputs have two states (on/off), analogue inputs have continuous voltage ranges.
           </div>
         </div>
         
         <div class="question-item" data-question="4">
-          <h4>Question 4: Why does the E-Stop have two contacts?</h4>
+          <h4>Question 4: Why is it important to check input type before connecting sensors?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-4" value="A" class="option-radio">
-              <span class="option-text">A) To meet LED colour standards</span>
+              <span class="option-text">A) To avoid signal errors and ensure proper sensor operation</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="B" class="option-radio">
-              <span class="option-text">B) To make the light brighter</span>
+              <span class="option-text">B) To make the installation faster</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="C" class="option-radio">
-              <span class="option-text">C) To reduce cost</span>
+              <span class="option-text">C) To reduce costs</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="D" class="option-radio">
-              <span class="option-text">D) For safety. If either contact opens, the system stops. This makes the E-Stop more reliable</span>
+              <span class="option-text">D) It's not important</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(4)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> D) For safety. If either contact opens, the system stops. This makes the E-Stop more reliable.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) To avoid signal errors and ensure proper sensor operation.
           </div>
         </div>
         
         <div class="question-item" data-question="5">
-          <h4>Question 5: What steps must be taken to reset the system after pressing the E-Stop?</h4>
+          <h4>Question 5: What types of devices are best suited for digital inputs?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-5" value="A" class="option-radio">
-              <span class="option-text">A) Replace the PLC</span>
+              <span class="option-text">A) Temperature sensors only</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-5" value="B" class="option-radio">
-              <span class="option-text">B) Turn the machine off and wait 1 hour</span>
+              <span class="option-text">B) Pressure transducers only</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-5" value="C" class="option-radio">
-              <span class="option-text">C) Twist the E-Stop to release it, then press the blue reset button or use the HMI reset</span>
+              <span class="option-text">C) Switches, buttons, and proximity sensors</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-5" value="D" class="option-radio">
-              <span class="option-text">D) Perform a firmware update</span>
+              <span class="option-text">D) Variable speed motors</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(5)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> C) Twist the E-Stop to release it, then press the blue reset button or use the HMI reset.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> C) Switches, buttons, and proximity sensors.
           </div>
         </div>
       </div>
@@ -370,7 +345,7 @@
         </button>
       </div>
       <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 4 - Emergency Stops</h1>
+          <h1 class="worksheet-title">Worksheet 4 - Basic Inputs</h1>
       </div>
       <div class="worksheet-header-right">
         <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-5.html'">
