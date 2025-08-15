@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix TSL - Digital Outputs</title>
+  <title>Matrix TSL - Open-Loop Control</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">
@@ -28,7 +28,7 @@
           </button>
         </div>
         <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 10 - Digital Outputs</h1>
+          <h1 class="worksheet-title">Worksheet 10 - Open-Loop Control</h1>
         </div>
         <div class="worksheet-header-right">
           <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-11.html'">
@@ -43,11 +43,11 @@
       <div class="worksheet-content">
         <div class="introduction-content-wrapper">
           <div class="introduction-text">
-            <p>Digital outputs are how a PLC controls external devices. These could be lights, motors, relays or solenoids. In this worksheet, you'll test a variety of output devices using buttons, sensors, and the HMI. This helps you understand how PLCs activate real-world hardware in response to logic conditions.</p>
+            <p>There are two principal types of control system: open loop and closed loop. Closed loop systems have some kind of feedback which allows for system regulation. Open loop systems have no feedback and engineers rely on an understanding of the components in the system to provide the required functionality.</p>
           </div>
           <div class="introduction-image">
             <div class="system-diagram">
-              <img src="assets/maintenance/ws10.png" alt="Flow Sensor System Maintenance">
+              <img src="assets/maintenance/ws10.png" alt="Variable Speed Motors in Pumping Station">
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@
     <div class="worksheet-section over-to-you-section">
       <h2 class="section-header"><i class="fas fa-hands-helping"></i> 2. Over To You</h2>
       <div class="worksheet-content">
-        <p><strong>Follow these steps to test digital outputs:</strong></p>
+        <p><strong>Follow these steps to explore open-loop control systems:</strong></p>
 
         <div class="steps-container">
 
@@ -66,12 +66,13 @@
             <div class="step-number">1</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Navigate to worksheet 10 on the HMI.</h4>
+                <h4>Build the Open-Loop System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
+              <p>Build the system as shown in the diagram. This demonstrates an open-loop control system using a potentiometer to control motor speed.</p>
             </div>
           </div>
 
@@ -79,13 +80,13 @@
             <div class="step-number">2</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>I0 → Q0 (Momentary)</h4>
+                <h4>Load Program 10</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press and hold the green push button I0. Observe LED Q0 turns on only while the button is pressed.</p>
+              <p>Load Program 10 to read the signal from the potentiometer and use it to vary the speed of the motor, using Pulse Width Modulation.</p>
             </div>
           </div>
 
@@ -93,13 +94,13 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>I1 Latch, I2 Reset</h4>
+                <h4>Monitor System Display</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press the black button I1 once and release. Q1 stays on. Press the red button I2 to turn it off.</p>
+              <p>The LOGO! PLC's screen shows the analogue input value, the PWM value and the output value. Observe how these change as you adjust the potentiometer.</p>
             </div>
           </div>
 
@@ -107,27 +108,23 @@
             <div class="step-number">4</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>I3 Latching</h4>
+                <h4>Test Motor Speed Control</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press the white latching button. Observe Q2 turns on and stays on.</p>
+              <p>Adjust the potentiometer from minimum to maximum and observe how the motor speed varies. Note that there is no feedback to confirm actual motor speed.</p>
             </div>
           </div>
-
-          <div class="step-card" data-step="5">
-            <div class="step-number">5</div>
-            <div class="step-content">
-              <div class="step-header">
-                <h4>I4/I5 Selector → Q3</h4>
-                <label class="step-checkbox">
-                  <input type="checkbox" class="step-complete-checkbox">
-                  <span class="checkmark"></span>
-                </label>
               </div>
-              <p>Turn the selector switch left to turn on I4 and observe Q3 stays on. Turn right to turn on I5 and observe Q3 flashes.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- So What Section -->
             </div>
           </div>
 
@@ -169,30 +166,30 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-cogs"></i>
-            <h3>Why this matters</h3>
+            <h3>Open-Loop Control System</h3>
           </div>
           <div class="card-content">
-            <p>As a maintenance apprentice, understanding digital outputs is essential. Outputs are what actually make things happen: starting motors, energising relays, activating solenoids, opening valves, or turning on lamps. Recognising output sequences is valuable because many industrial processes rely on timed events.</p>
+            <p>This is an example of an open-loop control system. Open-loop systems control outputs without feedback. They are simple but won't detect faults like a stuck valve or failed actuator.</p>
           </div>
         </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-bolt"></i>
-            <h3>What drives outputs</h3>
+            <h3>PWM Motor Control</h3>
           </div>
           <div class="card-content">
-            <p>Outputs turn on from buttons, selector switches, sensors, timers, or logic in the PLC. The HMI can also command outputs. Use the IO page to confirm which input caused the change.</p>
+            <p>Pulse Width Modulation (PWM) varies motor speed by changing the ratio of on-time to off-time. The system assumes the motor speed matches the PWM setting, but has no way to verify actual speed.</p>
           </div>
         </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-list-ol"></i>
-            <h3>Sequences and safety</h3>
+            <h3>Industrial Applications</h3>
           </div>
           <div class="card-content">
-            <p>Many machines run outputs in a sequence. Know the expected order so you can spot when one step fails. Safety events (like E‑Stop) should force outputs off immediately.</p>
+            <p>Knowing where these are used helps identify issues during inspections and repairs. Open-loop systems are common in conveyor belts, fans, and simple pump applications where exact speed isn't critical.</p>
           </div>
         </div>
       </div>

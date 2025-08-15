@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix TSL - Proximity Switch</title>
+  <title>Matrix TSL - Using Sensors</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">    <script src="worksheet-core.js"></script>
@@ -26,7 +26,7 @@
           </button>
         </div>
         <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 7 - Proximity Switch</h1>
+          <h1 class="worksheet-title">Worksheet 7 - Using Sensors</h1>
         </div>
         <div class="worksheet-header-right">
           <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-8.html'">
@@ -41,11 +41,11 @@
       <div class="worksheet-content">
         <div class="introduction-content-wrapper">
           <div class="introduction-text">
-            <p>A proximity switch detects an object's presence without contact, making it ideal for automation, positioning and safety systems. Maintenance engineers should know how they work to troubleshoot misalignments or faults, otherwise false triggers can cause machine stoppages or safety hazards. We use inductive sensors to detect metal objects.</p>
+            <p>Some sensors are digital, such as reed relays, Hall effect sensors, and simple level sensors. However, most are analogue, their output signal varies between 0 and 10V usually, representing a varying quantity like light level, temperature, or pressure. We can use signals from these to measure quantities and make control decisions.</p>
           </div>
           <div class="introduction-image">
             <div class="system-diagram">
-              <img src="assets/maintenance/ws7.png" alt="Valve System Maintenance">
+              <img src="assets/maintenance/ws7.png" alt="Temperature Sensor System">
             </div>
           </div>
         </div>
@@ -56,20 +56,20 @@
     <div class="worksheet-section over-to-you-section">
       <h2 class="section-header"><i class="fas fa-hands-helping"></i> 2. Over To You</h2>
       <div class="worksheet-content">
-        <p><strong>Follow these steps to use the inductive proximity sensor:</strong></p>
+        <p><strong>Follow these steps to explore analogue sensor monitoring:</strong></p>
 
         <div class="steps-container">
           <div class="step-card" data-step="1">
             <div class="step-number">1</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Open Worksheet 7</h4>
+                <h4>Build the Thermistor System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Navigate to Worksheet 7 on the HMI. Locate the proximity sensor (I6) on your training rig. Ensure it is not triggered (LED off on sensor and HMI).</p>
+              <p>Build the system as shown in the diagram. The thermistor is an analogue sensor. Touching it simulates increasing the temperature inside an appliance.</p>
             </div>
           </div>
 
@@ -77,13 +77,13 @@
             <div class="step-number">2</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Start and Lock</h4>
+                <h4>Load Program 7</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press Raise to lift the press from 0 mm to 15000 mm. Press Lock to begin the locking sequence. A fault will appear because the system did not detect the locking pins as engaged.</p>
+              <p>Load Program 7 to sample the temperature sensor and trigger an alarm when the sensor increases by 1%.</p>
             </div>
           </div>
 
@@ -91,13 +91,13 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Use Metal Target</h4>
+                <h4>Take Temperature Reading</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Reset, repeat the locking step, and this time place a metal object in front of the proximity sensor to simulate detection of the locking pins.</p>
+              <p>Use the switch on input 1 to take a temperature reading baseline.</p>
             </div>
           </div>
 
@@ -105,13 +105,27 @@
             <div class="step-number">4</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Observe Result</h4>
+                <h4>Apply Heat and Observe</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Observe what happens to the red locking pins at the top of the press when the sensor is triggered.</p>
+              <p>Use your fingers on the thermistor to apply some heat. After a 1% change, the green status LED should turn off and the red error LED should turn on.</p>
+            </div>
+          </div>
+
+          <div class="step-card" data-step="5">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Monitor Display</h4>
+                <label class="step-checkbox">
+                  <input type="checkbox" class="step-complete-checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <p>The LOGO! PLC's screen shows the analogue input value and the alarm status. Observe how the values change in real-time.</p>
             </div>
           </div>
         </div>
@@ -125,30 +139,30 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-cogs"></i>
-            <h3>Why this matters</h3>
+            <h3>Analogue Signal Importance</h3>
           </div>
           <div class="card-content">
-            <p>Proximity switches detect the presence of metal objects without physical contact, making them crucial for safety and reliability. In the forging press example, the sensor confirms that locking pins are engaged. If not detected, the system faults and stops to prevent unsafe movement.</p>
+            <p>Being able to read and interpret analogue signals is essential in industrial maintenance. Most real-world values like temperature, pressure, and flow vary continuously.</p>
           </div>
         </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-industry"></i>
-            <h3>Common applications</h3>
+            <h3>Greater Accuracy</h3>
           </div>
           <div class="card-content">
-            <p>Used to detect guards shut, parts present, end-of-travel on cylinders, and indexing positions. Inductive = metal only; use other sensor types for non‑metal.</p>
+            <p>Analogue sensors provide continuous information, allowing systems to respond with greater accuracy. Understanding how these signals work helps maintenance teams troubleshoot faults and calibrate equipment.</p>
           </div>
         </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-wrench"></i>
-            <h3>Setup and checks</h3>
+            <h3>Safe Operation</h3>
           </div>
           <div class="card-content">
-            <p>Mount within rated range, align to the target face, and avoid side detection. Verify the on/off point using a known metal target and confirm on the HMI IO page.</p>
+            <p>Monitoring analogue sensors ensures systems operate within safe and efficient limits. Temperature monitoring prevents overheating, pressure sensors prevent over-pressurization, and flow sensors detect blockages.</p>
           </div>
         </div>
       </div>
@@ -159,10 +173,11 @@
     <div class="worksheet-section key-takeaways-section">
       <h2 class="section-header"><i class="fas fa-list-check"></i> Key Takeaways</h2>
       <ul>
-        <li>Inductive sensors detect metal only; capacitive and photoelectric serve other materials/methods.</li>
-        <li>Used for guards, access points, and position checks in safety interlocks.</li>
-        <li>Misalignment and wiring faults cause false signals—verify with a metal target during tests.</li>
-        <li>Correct mounting and regular checks ensure reliable operation.</li>
+        <li>Analogue sensors provide continuous variable signals (0-10V) unlike digital sensors.</li>
+        <li>Temperature, pressure, and flow are typically measured with analogue sensors.</li>
+        <li>Monitoring analogue values enables predictive maintenance and early fault detection.</li>
+        <li>Understanding sensor signals helps troubleshoot equipment and prevent failures.</li>
+        <li>Calibration and regular checks ensure accurate sensor readings.</li>
       </ul>
     </div>
 
@@ -170,58 +185,58 @@
       <h2 class="section-header"><i class="fas fa-question-circle"></i> Questions & Answers</h2>
       <div class="questions-content">
         <div class="question-item" data-question="1">
-          <h4>Question 1: What does a proximity sensor detect?</h4>
+          <h4>Question 1: What is the main difference between digital and analogue sensors?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-1" value="A" class="option-radio">
-              <span class="option-text">A) It measures temperature</span>
+              <span class="option-text">A) Digital sensors are more expensive</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="B" class="option-radio">
-              <span class="option-text">B) It detects the presence of an object without physical contact</span>
+              <span class="option-text">B) Analogue sensors provide variable voltage signals representing continuous values, while digital sensors provide on/off signals</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="C" class="option-radio">
-              <span class="option-text">C) It controls motor speed</span>
+              <span class="option-text">C) There is no difference</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="D" class="option-radio">
-              <span class="option-text">D) It provides power to equipment</span>
+              <span class="option-text">D) Digital sensors work faster</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(1)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> B) It detects the presence of an object without physical contact.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) Analogue sensors provide variable voltage signals representing continuous values, while digital sensors provide on/off signals.
           </div>
         </div>
         
         <div class="question-item" data-question="2">
-          <h4>Question 2: Why are proximity sensors useful in automation systems?</h4>
+          <h4>Question 2: What typically happens when a thermistor detects a 1% temperature increase?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-2" value="A" class="option-radio">
-              <span class="option-text">A) They improve safety and reduce wear by detecting position without touching the object</span>
+              <span class="option-text">A) The green status LED turns off and the red error LED turns on</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="B" class="option-radio">
-              <span class="option-text">B) They provide light</span>
+              <span class="option-text">B) Nothing happens</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="C" class="option-radio">
-              <span class="option-text">C) They control power supplies</span>
+              <span class="option-text">C) The system shuts down completely</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="D" class="option-radio">
-              <span class="option-text">D) They only measure temperature</span>
+              <span class="option-text">D) The temperature decreases</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(2)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> D) They improve safety and reduce wear by detecting position without touching the object.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) The green status LED turns off and the red error LED turns on.
           </div>
         </div>
         

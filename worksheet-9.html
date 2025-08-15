@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix TSL - Temperature Sensor</title>
+  <title>Matrix TSL - Detecting Faults 2</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">    <script src="worksheet-core.js"></script>
@@ -26,7 +26,7 @@
           </button>
         </div>
         <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 9 - Temperature Sensor</h1>
+          <h1 class="worksheet-title">Worksheet 9 - Detecting Faults 2</h1>
         </div>
         <div class="worksheet-header-right">
           <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-10.html'">
@@ -41,11 +41,11 @@
       <div class="worksheet-content">
         <div class="introduction-content-wrapper">
           <div class="introduction-text">
-            <p>A temperature sensor tracks heat levels in real time to maintain safe and efficient system operation. Common in automation and process control, it helps prevent overheating or freezing. Engineers must understand these sensors to detect faults, ensure accurate readings, and avoid equipment damage or shutdowns.</p>
+            <p>In fault critical systems, such as industrial processes where a fault could have catastrophic consequences, it is important to track all problems as they develop. When using analogue sensors, it can be difficult to detect a faulty reading. If a sensor is short-circuited to one of the power supply rails, the input signal would still resemble a valid signal.</p>
           </div>
           <div class="introduction-image">
             <div class="system-diagram">
-              <img src="assets/maintenance/ws9.png" alt="Proximity Switch System Maintenance">
+              <img src="assets/maintenance/ws9.png" alt="Sheet Steel Machine Fault Detection">
             </div>
           </div>
         </div>
@@ -56,20 +56,20 @@
     <div class="worksheet-section over-to-you-section">
       <h2 class="section-header"><i class="fas fa-hands-helping"></i> 2. Over To You</h2>
       <div class="worksheet-content">
-        <p><strong>Follow these steps to explore the temperature sensor and scaling:</strong></p>
+        <p><strong>Follow these steps to explore advanced fault detection:</strong></p>
 
         <div class="steps-container">
           <div class="step-card" data-step="1">
             <div class="step-number">1</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Open Worksheet 9</h4>
+                <h4>Build the Range Detection System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Place your fingers on the temperature probe and observe the "Temp Sensor Raw" value change.</p>
+              <p>Build the system as shown in the diagram. It contains a potentiometer which is supplying the analogue sensor signal.</p>
             </div>
           </div>
 
@@ -77,13 +77,13 @@
             <div class="step-number">2</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Apply Scalar 10</h4>
+                <h4>Load Program 9</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Add a scalar value of 10. Observe how the blue scaled value changes.</p>
+              <p>Load Program 9 to: read the potentiometer signal; light the green LED if the signal has a value between 50 and 200; light the red LED if the signal is outside of these values.</p>
             </div>
           </div>
 
@@ -91,13 +91,13 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Apply Scalar 1000</h4>
+                <h4>Test Valid Range</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Set scalar to 1000 and observe the much higher scaled value.</p>
+              <p>Adjust the potentiometer to values within the 50-200 range and confirm the green LED lights. Test values outside this range to see the red fault LED.</p>
             </div>
           </div>
 
@@ -105,13 +105,27 @@
             <div class="step-number">4</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Tune to Ambient</h4>
+                <h4>Test Short Circuit Faults</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Adjust the scalar until the value represents a sensible ambient temperature (20–40°C). The IO screen shows a suggested scalar.</p>
+              <p>Short-circuit input I1 to +V and 0V, in turn and check that the system is detecting the fault correctly.</p>
+            </div>
+          </div>
+
+          <div class="step-card" data-step="5">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Monitor System Status</h4>
+                <label class="step-checkbox">
+                  <input type="checkbox" class="step-complete-checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <p>The LOGO! PLC's screen shows the analogue input value and the fault status. Monitor both during all tests.</p>
             </div>
           </div>
         </div>
@@ -125,30 +139,30 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-cogs"></i>
-            <h3>Why this matters</h3>
+            <h3>Intelligent Fault Detection</h3>
           </div>
           <div class="card-content">
-            <p>Temperature sensors keep equipment safe by preventing overheating and detecting faults. We are using a PT100 probe connected to an evaluation unit that converts resistance to a 0–10 V signal for the PLC. The PLC reads a raw value (0–27,648) and scales it to a real temperature.</p>
+            <p>Well-designed circuits and control logic play a key role in ensuring equipment operates safely and reliably. Intelligent use of inputs and monitoring can help detect faults early, confirm devices are responding correctly, and reduce unplanned downtime.</p>
           </div>
         </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-temperature-half"></i>
-            <h3>Scaling the reading</h3>
+            <h3>Range-Based Detection</h3>
           </div>
           <div class="card-content">
-            <p>Raw values must be scaled to °C. Use the suggested scalar, then check against a known ambient (about 20–40 °C). A value near max can indicate a wiring fault.</p>
+            <p>By defining valid operating ranges for analogue signals, systems can automatically detect when sensors are short-circuited to power rails or experiencing other failures that would otherwise appear as valid readings.</p>
           </div>
         </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-bug"></i>
-            <h3>Typical faults</h3>
+            <h3>Safety Standards</h3>
           </div>
           <div class="card-content">
-            <p>Loose terminals, damaged probes, electrical noise, or drift in the transmitter can cause bad readings. Verify wiring first, then compare IO, HMI, and reality.</p>
+            <p>This approach is especially important when maintaining systems that must meet strict safety or operational standards. Early fault detection prevents cascading failures and maintains system integrity.</p>
           </div>
         </div>
       </div>
@@ -159,10 +173,11 @@
     <div class="worksheet-section key-takeaways-section">
       <h2 class="section-header"><i class="fas fa-list-check"></i> Key Takeaways</h2>
       <ul>
-        <li>PT100 → evaluation unit → 0–10 V analogue input to PLC.</li>
-        <li>Raw value range 0–27,648 must be scaled to °C.</li>
-        <li>A reading near 32,000 indicates a fault (e.g., disconnected sensor).</li>
-        <li>Accurate scaling is essential (typical room 20–40 °C).</li>
+        <li>Range-based fault detection identifies sensor failures automatically.</li>
+        <li>Short circuits to power rails can appear as valid signals without range checking.</li>
+        <li>Valid operating ranges prevent false readings from being accepted.</li>
+        <li>Early fault detection reduces unplanned downtime and improves safety.</li>
+        <li>Intelligent monitoring is essential for safety-critical systems.</li>
       </ul>
     </div>
 
@@ -170,58 +185,58 @@
       <h2 class="section-header"><i class="fas fa-question-circle"></i> Questions & Answers</h2>
       <div class="questions-content">
         <div class="question-item" data-question="1">
-          <h4>Question 1: What does a temperature sensor do in a PLC system?</h4>
+          <h4>Question 1: Why is range-based fault detection important for analogue sensors?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-1" value="A" class="option-radio">
-              <span class="option-text">A) It measures flow</span>
+              <span class="option-text">A) To save power</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="B" class="option-radio">
-              <span class="option-text">B) It controls motor speed</span>
+              <span class="option-text">B) To make systems more complex</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="C" class="option-radio">
-              <span class="option-text">C) It tracks heat levels to help prevent overheating, freezing, or system faults</span>
+              <span class="option-text">C) To detect sensor failures that would otherwise appear as valid signals</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="D" class="option-radio">
-              <span class="option-text">D) It provides power to equipment</span>
+              <span class="option-text">D) To reduce maintenance costs</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(1)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> C) It tracks heat levels to help prevent overheating, freezing, or system faults.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> C) To detect sensor failures that would otherwise appear as valid signals.
           </div>
         </div>
         
         <div class="question-item" data-question="2">
-          <h4>Question 2: What type of temperature sensor is used in this worksheet?</h4>
+          <h4>Question 2: What happens when a sensor signal is outside the valid range of 50-200?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-2" value="A" class="option-radio">
-              <span class="option-text">A) A PT100 RTD sensor</span>
+              <span class="option-text">A) The red fault LED turns on</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="B" class="option-radio">
-              <span class="option-text">B) A K-type thermocouple</span>
+              <span class="option-text">B) Nothing happens</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="C" class="option-radio">
-              <span class="option-text">C) An NTC thermistor</span>
+              <span class="option-text">C) The system shuts down</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="D" class="option-radio">
-              <span class="option-text">D) An infrared sensor</span>
+              <span class="option-text">D) The green LED flashes</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(2)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> C) A PT100 RTD sensor.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) The red fault LED turns on.
           </div>
         </div>
         

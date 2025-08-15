@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix TSL - Potentiometer</title>
+  <title>Matrix TSL - Detecting Faults 1</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">    <script src="worksheet-core.js"></script>
@@ -26,7 +26,7 @@
           </button>
         </div>
         <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 8 - Potentiometer</h1>
+          <h1 class="worksheet-title">Worksheet 8 - Detecting Faults 1</h1>
         </div>
         <div class="worksheet-header-right">
           <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-9.html'">
@@ -41,11 +41,11 @@
       <div class="worksheet-content">
         <div class="introduction-content-wrapper">
           <div class="introduction-text">
-            <p>A potentiometer is an adjustable resistor used to create a variable voltage signal, typically between 0 and 10 V. In PLC systems, it is commonly used to set speeds, adjust levels, or simulate sensor values. Understanding how potentiometers work helps engineers control analogue inputs, scale values, and test system responses accurately.</p>
+            <p>In modern industrial systems, controllers also report on the status of the system and many of its components. In this landing gear system, the controller can detect when the main landing gear is not fully engaged and inform the pilot and flight control so that they can react accordingly.</p>
           </div>
           <div class="introduction-image">
             <div class="system-diagram">
-              <img src="assets/maintenance/ws8.png" alt="Float Switch System Maintenance">
+              <img src="assets/maintenance/ws8.png" alt="Landing Gear Fault Detection System">
             </div>
           </div>
         </div>
@@ -56,20 +56,20 @@
     <div class="worksheet-section over-to-you-section">
       <h2 class="section-header"><i class="fas fa-hands-helping"></i> 2. Over To You</h2>
       <div class="worksheet-content">
-        <p><strong>Follow these steps to explore the potentiometer and scaling:</strong></p>
+        <p><strong>Follow these steps to explore fault detection systems:</strong></p>
 
         <div class="steps-container">
           <div class="step-card" data-step="1">
             <div class="step-number">1</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Open Worksheet 8</h4>
+                <h4>Build the Fault Detection System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Turn the potentiometer to 0 and observe the motor speed.</p>
+              <p>Build the system as shown in the diagram. It contains a resistor that allows the current in an incandescent warning bulb to be monitored.</p>
             </div>
           </div>
 
@@ -77,13 +77,13 @@
             <div class="step-number">2</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Go To 100%</h4>
+                <h4>Load Program 8</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Slowly rotate the potentiometer to the right until the HMI shows 100%.</p>
+              <p>Load Program 8 that allows you to switch the bulb on and off using the switch connected to I1.</p>
             </div>
           </div>
 
@@ -91,13 +91,13 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Add Offset +50</h4>
+                <h4>Add Analogue Sampling</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press the purple "i" next to Potentiometer Scaled and apply an offset of 50. Rotate to observe the effect.</p>
+              <p>Add an analogue sample function to the program for I2 to detect the voltage change across the 10Ω resistor as current flows through it.</p>
             </div>
           </div>
 
@@ -105,13 +105,13 @@
             <div class="step-number">4</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Add Offset -50</h4>
+                <h4>Program Fault Detection</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Set the offset to -50 and repeat the test.</p>
+              <p>Switch on the red LED if this signal is zero when the lamp is switched on. This creates a broken bulb detector.</p>
             </div>
           </div>
 
@@ -119,13 +119,27 @@
             <div class="step-number">5</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Change Scalar</h4>
+                <h4>Test Fault Detection</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Remove the offset. Change scalar from 100 to 10 and observe behaviour. Adjust until the scaled value represents a sensible ambient temperature (20–40°C).</p>
+              <p>Test this 'broken bulb detector' by removing the bulb. Observe the fault indication.</p>
+            </div>
+          </div>
+
+          <div class="step-card" data-step="6">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Monitor System Status</h4>
+                <label class="step-checkbox">
+                  <input type="checkbox" class="step-complete-checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <p>The LOGO! PLC's screen shows the analogue input value and the fault status. Monitor both during testing.</p>
             </div>
           </div>
         </div>
@@ -139,30 +153,30 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-cogs"></i>
-            <h3>Why this matters</h3>
+            <h3>Safety-Critical Systems</h3>
           </div>
           <div class="card-content">
-            <p>Potentiometers are used to give operators direct control over speed, pressure, temperature or position. Offsets and scaling change how inputs behave—if you don't understand them, you can misdiagnose faults. Real systems rarely use the full 0–10 V range, so correct scaling is essential.</p>
+            <p>In safety-critical systems, extra circuitry is often used to confirm that devices are operating as expected. This prevents situations where a command is sent but the device fails to respond.</p>
           </div>
         </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-sliders-h"></i>
-            <h3>Offset vs. scalar</h3>
+            <h3>Current Monitoring Method</h3>
           </div>
           <div class="card-content">
-            <p>Offset shifts the whole reading up or down. Scalar stretches or compresses the range. Use both to map 0–10 V to meaningful units like % or °C.</p>
+            <p>One common method is placing a small resistor in line with an actuator. By measuring the voltage across the resistor, the system can detect if current is flowing.</p>
           </div>
         </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-gauge"></i>
-            <h3>Practical testing</h3>
+            <h3>Operational Verification</h3>
           </div>
           <div class="card-content">
-            <p>Set the pot to 0%, 50%, and 100% and confirm the scaled value follows. If it doesn't, adjust scalar first, then fine‑tune with a small offset.</p>
+            <p>This helps verify that the actuator is not just being commanded, but is actually drawing power and likely operating correctly. Essential for aircraft, nuclear, and process safety systems.</p>
           </div>
         </div>
       </div>
@@ -173,10 +187,11 @@
     <div class="worksheet-section key-takeaways-section">
       <h2 class="section-header"><i class="fas fa-list-check"></i> Key Takeaways</h2>
       <ul>
-        <li>Potentiometer is a 0–10 V analogue input to the PLC.</li>
-        <li>Offset shifts the whole range; scalar stretches or compresses it.</li>
-        <li>Correct scaling is needed to match real-world units (e.g., % or RPM).</li>
-        <li>Used to tune, simulate, and test system responses.</li>
+        <li>Fault detection systems monitor actual device operation, not just commands.</li>
+        <li>Current monitoring through resistors verifies electrical load operation.</li>
+        <li>Safety-critical systems require verification that devices respond as expected.</li>
+        <li>Broken bulb/device detection prevents unnoticed system failures.</li>
+        <li>Analogue monitoring provides real-time feedback on device health.</li>
       </ul>
     </div>
 
@@ -184,58 +199,58 @@
       <h2 class="section-header"><i class="fas fa-question-circle"></i> Questions & Answers</h2>
       <div class="questions-content">
         <div class="question-item" data-question="1">
-          <h4>Question 1: What does a potentiometer do in a PLC system?</h4>
+          <h4>Question 1: Why is fault detection important in safety-critical systems?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-1" value="A" class="option-radio">
-              <span class="option-text">A) It measures pressure</span>
+              <span class="option-text">A) To reduce power consumption</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="B" class="option-radio">
-              <span class="option-text">B) It provides power</span>
+              <span class="option-text">B) To confirm devices are actually operating, not just being commanded</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="C" class="option-radio">
-              <span class="option-text">C) It creates a variable voltage signal used to control things like motor speed or level settings</span>
+              <span class="option-text">C) To make systems more complex</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="D" class="option-radio">
-              <span class="option-text">D) It detects metal</span>
+              <span class="option-text">D) To increase costs</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(1)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> C) It creates a variable voltage signal used to control things like motor speed or level settings.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) To confirm devices are actually operating, not just being commanded.
           </div>
         </div>
         
         <div class="question-item" data-question="2">
-          <h4>Question 2: What voltage range does a potentiometer typically output?</h4>
+          <h4>Question 2: How does current monitoring work for fault detection?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-2" value="A" class="option-radio">
-              <span class="option-text">A) Between 10 and 24 volts</span>
+              <span class="option-text">A) It measures temperature changes</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="B" class="option-radio">
-              <span class="option-text">B) Between 0 and 10 volts</span>
+              <span class="option-text">B) A small resistor is placed in line with the actuator to detect voltage changes</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="C" class="option-radio">
-              <span class="option-text">C) Between 0 and 5 volts</span>
+              <span class="option-text">C) It counts the number of operations</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="D" class="option-radio">
-              <span class="option-text">D) It depends on the battery</span>
+              <span class="option-text">D) It only works with motors</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(2)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> B) Between 0 and 10 volts.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) A small resistor is placed in line with the actuator to detect voltage changes.
           </div>
         </div>
         
