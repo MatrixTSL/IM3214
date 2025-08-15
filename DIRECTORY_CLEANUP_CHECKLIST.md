@@ -39,30 +39,7 @@
 
 ---
 
-## **Phase 2: Documentation and Archive Review** ✅ **LOW RISK**
-
-### **Objective**: Organize documentation and review archived files
-### **Target Structure**:
-```
-/docs/               (existing - analyze and organize)
-/archived/           (existing - review for deletion)
-```
-
-### **Tasks Checklist**:
-- [ ] Analyze `/docs/` folder contents
-- [ ] Organize documents by type (PDFs, manuals, etc.)
-- [ ] Review `/archived/worksheet-original-backup.html`
-- [ ] Determine if archived files are still needed
-- [ ] Consider creating `/docs/archived/` for old documentation
-- [ ] Consider moving LICENSE and README.md (optional)
-- [ ] **Git commit**: "Phase 2: Organize documentation and review archives"
-
-### **Files Updated**: None
-### **Risk Level**: ✅ **LOW** - Documentation only
-
----
-
-## **Phase 3: JavaScript Module Reorganization** ⚠️ **MEDIUM RISK**
+## **Phase 2: JavaScript Module Reorganization** ⚠️ **MEDIUM RISK**
 
 ### **Objective**: Group JavaScript files by functionality
 ### **Target Structure**:
@@ -124,7 +101,7 @@
 
 ---
 
-## **Phase 4: CSS and Styling Organization** ⚠️ **MEDIUM RISK**
+## **Phase 3: CSS and Styling Organization** ⚠️ **MEDIUM RISK**
 
 ### **Objective**: Centralize styling resources
 ### **Target Structure**:
@@ -153,13 +130,13 @@
 - [ ] Test all pages render correctly
 - [ ] Test responsive design works
 - [ ] Test PWA offline styling
-- [ ] **Git commit**: "Phase 4: Move CSS files to organized structure"
+- [ ] **Git commit**: "Phase 3: Move CSS files to organized structure"
 
 ### **Risk Level**: ⚠️ **MEDIUM** - Styling path updates needed
 
 ---
 
-## **Phase 5: Worksheet Pages Organization** ⚠️ **MEDIUM RISK**
+## **Phase 4: Worksheet Pages Organization** ⚠️ **MEDIUM RISK**
 
 ### **Objective**: Group all worksheet pages
 ### **Target Structure**:
@@ -208,13 +185,13 @@
 - [ ] Test prev/next navigation between worksheets
 - [ ] Test "Return to Worksheets" functionality
 - [ ] Test worksheet interactive features still work
-- [ ] **Git commit**: "Phase 5: Move worksheet pages to dedicated folder"
+- [ ] **Git commit**: "Phase 4: Move worksheet pages to dedicated folder"
 
 ### **Risk Level**: ⚠️ **MEDIUM** - Navigation updates needed
 
 ---
 
-## **Phase 6: Core Pages Consolidation** 🔴 **HIGH RISK**
+## **Phase 5: Core Pages Consolidation** 🔴 **HIGH RISK**
 
 ### **Objective**: Group main application pages
 ### **Target Structure**:
@@ -244,7 +221,7 @@
 - [ ] Test homepage links to other pages
 - [ ] Test PWA core page caching
 - [ ] Test all inter-page navigation
-- [ ] **Git commit**: "Phase 6: Move core pages to dedicated folder"
+- [ ] **Git commit**: "Phase 5: Move core pages to dedicated folder"
 
 ### **Risk Level**: 🔴 **HIGH** - Most complex navigation changes
 
