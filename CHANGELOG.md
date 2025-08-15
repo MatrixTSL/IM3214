@@ -6,6 +6,37 @@ This document tracks significant changes made to the PLC curriculum application.
 ## Recent Changes
 ________________________________________________________________________________
 
+### Issue 0020: Folder Structure Reorganization and File Cleanup
+**Date**: August 15, 2025
+
+**Problem**:
+The root directory was cluttered with development tools, configuration files, and unused HTML files, making it difficult to identify core application files and reducing maintainability.
+
+**Files Deleted**:
+- `maintenance-training.html` - Unused HTML file (no references found)
+- `progress-guide.html` - Unused HTML file (no references found)
+- `error-handler.js` - Only referenced in archived backup file
+
+**Folder Structure Changes**:
+- Created `/dev-tools/` folder for development utilities
+  - Moved `server.js` (Node.js development server)
+  - Moved `server.py` (Python development server)  
+  - Moved `git push.txt` (development notes)
+- Created `/config/` folder for server configurations
+  - Moved `web.config` (IIS configuration)
+  - Moved `.htaccess` (Apache configuration)
+
+**Files Modified**:
+- `about.html` - Updated server command paths to reference `dev-tools/` folder
+
+**Result**: 
+- Cleaner root directory with 5 fewer files
+- Better logical organization of development vs production files
+- No functionality broken - all application features remain intact
+- Improved maintainability and project structure
+
+________________________________________________________________________________
+
 ### Issue 0019: Removed Unused Scenario System
 **Date**: August 2025
 
