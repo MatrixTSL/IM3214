@@ -5,18 +5,17 @@ class WorksheetTracker {
   constructor() {
     this.worksheets = {
       maintenance: [
-        { id: 1, title: "Simple PLC Control Systems", type: "maintenance", totalQuestions: 5 },
-        { id: 2, title: "Complex PLC Control Systems", type: "maintenance", totalQuestions: 5 },
-        { id: 3, title: "HMIs", type: "maintenance", totalQuestions: 5 },
-        { id: 4, title: "Emergency Stops", type: "maintenance", totalQuestions: 5 },
-        { id: 5, title: "Status LED", type: "maintenance", totalQuestions: 5 },
-        { id: 6, title: "Normally Open vs Normally Closed", type: "maintenance", totalQuestions: 5 },
-        { id: 7, title: "Proximity Switch", type: "maintenance", totalQuestions: 5 },
-        { id: 8, title: "Potentiometer", type: "maintenance", totalQuestions: 5 },
-        { id: 9, title: "Temperature Sensor", type: "maintenance", totalQuestions: 5 },
-        { id: 10, title: "Digital Outputs", type: "maintenance", totalQuestions: 5 },
-        { id: 11, title: "Motor PWM", type: "maintenance", totalQuestions: 5 },
-        { id: 12, title: "Motor Relay", type: "maintenance", totalQuestions: 5 }
+        { id: 1, title: "Basic Outputs", type: "maintenance", totalQuestions: 5 },
+        { id: 2, title: "Sequenced Outputs", type: "maintenance", totalQuestions: 5 },
+        { id: 3, title: "Pulse Width Modulation", type: "maintenance", totalQuestions: 5 },
+        { id: 4, title: "Basic Inputs", type: "maintenance", totalQuestions: 5 },
+        { id: 5, title: "Pedestrian Crossing", type: "maintenance", totalQuestions: 5 },
+        { id: 6, title: "Potentiometers", type: "maintenance", totalQuestions: 5 },
+        { id: 7, title: "Using Sensors", type: "maintenance", totalQuestions: 5 },
+        { id: 8, title: "Detecting Faults 1", type: "maintenance", totalQuestions: 5 },
+        { id: 9, title: "Detecting Faults 2", type: "maintenance", totalQuestions: 5 },
+        { id: 10, title: "Open-Loop Control", type: "maintenance", totalQuestions: 5 },
+        { id: 11, title: "Closed-Loop Control", type: "maintenance", totalQuestions: 5 }
       ]
       // Removed fault scenarios - they are no longer part of the system
     };
@@ -182,7 +181,7 @@ class WorksheetTracker {
     try {
       const allProgress = {};
       
-      // Get maintenance worksheets progress only (worksheets 1-12)
+      // Get maintenance worksheets progress only (worksheets 1-11)
       this.worksheets.maintenance.forEach(worksheet => {
         allProgress[`maintenance-${worksheet.id}`] = this.getWorksheetProgress(worksheet.id, 'maintenance');
       });
@@ -445,7 +444,7 @@ class WorksheetTracker {
       csvContent += `Completed Questions,${overallStats.completedQuestions}/${overallStats.totalQuestions}\n\n`;
       
       // Add worksheet details (maintenance only)
-      csvContent += "Worksheet Progress (Worksheets 1-12)\n";
+      csvContent += "Worksheet Progress (Worksheets 1-11)\n";
       csvContent += "Type,ID,Title,Completed Questions,Total Questions,Completion %,Last Updated\n";
       
       // Add maintenance worksheets only
