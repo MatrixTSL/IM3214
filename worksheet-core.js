@@ -67,14 +67,8 @@ async function loadWorksheetHandlers(type, scenario) {
   
   if (type === 'maintenance') {
     handlersToLoad.push('worksheet-maintenance-handler.js');
-    
-    // Load scenario-popup.js if the scenario has a functionCall (interactive worksheet)
-    if (scenario && scenario.functionCall) {
-      handlersToLoad.push('scenario-popup.js');
-    }
   } else if (type === 'fault') {
     handlersToLoad.push('worksheet-fault-handler.js');
-    handlersToLoad.push('scenario-popup.js');
   }
   
   // Load handlers dynamically
@@ -99,81 +93,6 @@ function loadScript(src) {
     script.onerror = reject;
     document.head.appendChild(script);
   });
-}
-
-// Main worksheet loading function
-async function loadWorksheet() {
-  try {
-    console.log('Current URL:', window.location.href);
-    console.log('Search params:', window.location.search);
-    
-    const worksheetId = getUrlParameter('id');
-    const type = getUrlParameter('type') || 'maintenance';
-    
-    console.log('Worksheet ID:', worksheetId);
-    console.log('Type:', type);
-    
-    if (!worksheetId) {
-      showError('No worksheet ID specified');
-      return;
-    }
-
-    // Load data for worksheets first to get scenario info
-    const filename = type === 'fault' ? 'dbFaultScenarios.json' : 'dbMaintenanceScenarios.json';
-    const response = await fetch(filename);
-    const data = await response.json();
-    
-    const scenario = data.scenarios.find(s => s.id === parseInt(worksheetId));
-    if (!scenario) {
-      showError('Worksheet not found');
-      return;
-    }
-
-    console.log('Loading worksheet:', scenario.title);
-    console.log('Scenario has functionCall:', scenario.functionCall);
-
-    // Load appropriate handler files (pass scenario for functionCall detection)
-    await loadWorksheetHandlers(type, scenario);
-
-    // Render worksheet based on type and functionCall
-    if (type === 'maintenance') {
-      // Check if this is an interactive worksheet with a functionCall
-      if (scenario.functionCall && typeof window[scenario.functionCall] === 'function') {
-        console.log(`Calling interactive function: ${scenario.functionCall}`);
-        // Instead of calling the popup function, render inline interactive content
-        renderInlineInteractiveWorksheet(scenario, parseInt(worksheetId));
-      } else {
-        // Use the handler system for regular worksheets
-        if (typeof renderEnhancedMaintenanceWorksheet === 'function') {
-          renderEnhancedMaintenanceWorksheet(scenario, parseInt(worksheetId));
-        } else {
-          renderMaintenanceWorksheet(scenario);
-        }
-      }
-    } else if (type === 'fault') {
-      // Check if fault handler is available
-      if (typeof renderFaultScenario === 'function') {
-        renderFaultScenario(scenario);
-      } else if (scenario.id === 1) {
-        renderInteractiveFaultScenario(scenario);
-      } else {
-        renderBasicFaultScenario(scenario);
-      }
-    } else {
-      renderBasicWorksheet(scenario, type);
-    }
-    
-  } catch (error) {
-    console.error('Error loading worksheet:', error);
-    showError('Failed to load worksheet');
-  } finally {
-    // Show content and hide loading
-    document.getElementById('loading-container').style.display = 'none';
-    document.getElementById('main-content').style.display = 'block';
-    
-    // Update navigation buttons
-    setTimeout(updateNavigationButtons, 100);
-  }
 }
 
 // Enhanced content generator for maintenance worksheets (fallback function)

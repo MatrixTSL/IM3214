@@ -61,21 +61,6 @@ class WorksheetTracker {
         }
       });
 
-      // Removed fault worksheets initialization
-      // this.worksheets.fault.forEach(worksheet => {
-      //   const key = `worksheet-fault-${worksheet.id}`;
-      //   if (!localStorage.getItem(key)) {
-      //     localStorage.setItem(key, JSON.stringify({
-      //       answers: {},
-      //       metadata: {
-      //         lastUpdated: null,
-      //         completedQuestions: 0,
-      //         totalQuestions: worksheet.totalQuestions,
-      //         completionPercentage: 0
-      //       }
-      //     }));
-      //   }
-      // });
     } catch (error) {
       console.error('Error initializing storage:', error);
     }

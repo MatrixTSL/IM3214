@@ -58,7 +58,6 @@ function checkLoadedScripts() {
   // Check for specific required scripts
   const requiredScripts = [
     'worksheet-core.js',
-    'scenario-popup.js',
     'worksheet-maintenance-handler.js'
   ];
   

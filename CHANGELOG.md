@@ -1,10 +1,77 @@
-# Change Log - Siemens LOGO! PLCv2
+# Change Log - PLC Logo Curriculum
 
 ## Overview
-This document summarizes all changes made to fix various issues in the Siemens LOGO! PLCapplication during this development session.
+This document tracks significant changes made to the PLC curriculum application.
 
-## Issues Fixed (Chronological Order)
+## Recent Changes
 ________________________________________________________________________________
+
+### Issue 0019: Removed Unused Scenario System
+**Date**: August 2025
+
+**Problem**:
+The codebase contained an extensive scenario system that was no longer being used. This included large JSON files with scenario data, scenario popup functionality, and related code that had no active references or usage in the application.
+
+**Files Deleted**:
+- `scenario-popup.js` - Scenario popup functionality (1095 lines)
+- `dbFaultScenarios.json` - Fault scenarios data (unused)
+- `dbMaintenanceScenarios.json` - Maintenance scenarios data (unused)
+- `manifest-standalone.json` - Unused PWA manifest variant
+
+**Files Modified**:
+- `index.html` - Removed scenario-popup.js script references
+- `CP2388-worksheets.html` - Removed scenario-popup.js script references
+- `cp0539-worksheets.html` - Removed scenario-popup.js script references
+- `worksheet-debug.js` - Removed scenario-popup.js from required scripts
+- `worksheet-core.js` - Removed loadWorksheet function and scenario loading logic
+- `service-worker.js` - Removed scenario-popup.js from cached assets
+- `package.json` - Removed scenario files from build assets
+
+**Result**: 
+- Removed approximately 3000+ lines of unused code
+- Eliminated large unused JSON data files
+- Cleaned up all references to scenario system
+- Streamlined codebase by removing dead code
+- Reduced application size and complexity
+
+### Issue 0018: Codebase Cleanup - Removed Simulation JavaScript Files
+**Date**: December 2024
+
+**Problem**:
+After copying the application from another product, the codebase contained numerous unused simulation JavaScript files and commented code that were no longer needed.
+
+**Files Deleted**:
+- `analogue-sensors-simulation.js`
+- `digital-sensors-simulation.js`
+- `emergency-stop-simulation.js`
+- `fault-detection-simulation.js`
+- `float-switch-simulation.js`
+- `flow-sensor-simulation.js`
+- `hmi-simulation.js`
+- `plc-simulation.js`
+- `proximity-switch-simulation.js`
+- `pump-simulation.js`
+- `status-led-simulation.js`
+- `temperature-sensor-simulation.js`
+- `valve-simulation.js`
+
+**HTML Worksheet Files Modified**:
+- `worksheet-7.html` - Removed simulation script references
+- `worksheet-10.html` - Removed simulation script references  
+- `worksheet-11.html` - Removed simulation script references
+- `worksheet-12.html` - Removed simulation script references
+
+**Code Cleanup**:
+- Removed commented code from `worksheet-tracking.js`
+
+**Documentation Cleanup**:
+- Removed all .md documentation files except README.md and CHANGELOG.md
+
+**Result**: 
+- Removed 18 unused simulation JavaScript files
+- Cleaned up HTML references to prevent broken dependencies
+- Streamlined codebase for the new product focus
+- Maintained all essential functionality while removing legacy simulation code
 
 ### Issue 0017: Worksheet Simulations Cleanup
 **Date**: 2025-01-27

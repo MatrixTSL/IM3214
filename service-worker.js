@@ -21,7 +21,6 @@ const ADDITIONAL_ASSETS = [
   './worksheet-tracking.js',
   './worksheet-maintenance-handler.js',
   './pwa-install.js',
-  './scenario-popup.js',
   './pdf-popup.js',
   './image-fallback.js'
 ];
