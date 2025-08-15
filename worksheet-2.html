@@ -3,9 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix TSL - Complex PLC Systems</title>
+  <title>Matrix TSL - Sequenced Outputs</title>
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel          <h4>Question 2: In a traffic light sequence, what happens after the Red light?</h4>
+          <div class="multiple-choice-options">
+            <label class="option-label">
+              <input type="radio" name="question-2" value="A">
+              <span class="option-text">A) Green light comes on immediately</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-2" value="B">
+              <span class="option-text">B) Red and Amber lights come on together</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-2" value="C">
+              <span class="option-text">C) The system shuts down</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-2" value="D">
+              <span class="option-text">D) All lights turn on at once</span>
+            </label>="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">
   <link rel="manifest" href="manifest.json">
   <script src="worksheet-core.js"></script>
@@ -73,7 +90,7 @@
           </button>
         </div>
         <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 2 - Complex PLC Systems</h1>
+          <h1 class="worksheet-title">Worksheet 2 - Sequenced Outputs</h1>
         </div>
         <div class="worksheet-header-right">
           <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-3.html'">
@@ -90,7 +107,7 @@
       <div class="worksheet-content">
         <div class="introduction-content-wrapper">
           <div class="introduction-text">
-            <p>Complex PLC systems control multi-step processes using sensors and outputs. They're used in real industrial environments to safely sequence tasks, like lifting a bridge or moving parts on an assembly line. In this worksheet, you'll see how the PLC manages multiple signals and safety checks to complete a process step by step.</p>
+            <p>Sequenced outputs control systems where outputs turn on and off in a specific order, like traffic lights. These systems use state machines to move from one condition to the next. In this worksheet, you'll build a traffic light system and learn how PLCs control sequenced operations in automation.</p>
           </div>
           <div class="introduction-image">
             <div class="system-diagram">
@@ -112,13 +129,13 @@
             <div class="step-number">1</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Navigate to Worksheet 2</h4>
+                <h4>Assemble the Traffic Light System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Navigate to Worksheet 2 on the HMI.</p>
+              <p>Connect three LED output modules to your Matrix PLC LOGO! Module to create a traffic light system. Arrange them vertically with Red at the top, Amber in the middle, and Green at the bottom, just like a real traffic light.</p>
             </div>
           </div>
           
@@ -126,13 +143,13 @@
             <div class="step-number">2</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Test Input I0</h4>
+                <h4>Load Program 2</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press the button I0 again as you did in Worksheet 1 but this time don't hold it down. You will now see the output lights sequence themselves on from Output 0 (Q0) to Output 5 (Q5).</p>
+              <p>Use the LOGO! Soft Comfort software to load Program 2 into your PLC. This program contains the traffic light sequencing logic that will control your LED outputs in the proper sequence.</p>
             </div>
           </div>
           
@@ -140,13 +157,13 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Interrupt the Sequence</h4>
+                <h4>Start the Sequence</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>As the lights are turning on, press Input 2 (I2), the red button. This interrupts the sequence and turns it off.</p>
+              <p>Press input I0 to start the traffic light sequence. Watch as the lights change in the correct traffic light pattern: Red → Red+Amber → Green → Amber → back to Red.</p>
             </div>
           </div>
           
@@ -154,13 +171,13 @@
             <div class="step-number">4</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Observe I/O States</h4>
+                <h4>Analyze the State Machine</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Observe the Inputs and Outputs changing on the HMI. Notice that the HMI does not show I0 as on, as it is not. The PLC has received and latched the start command.</p>
+              <p>Observe how the PLC program moves from one state to the next automatically. This is called a state machine - each state has specific outputs active, and transitions occur based on timing conditions.</p>
             </div>
           </div>
         </div>
@@ -175,10 +192,10 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-cogs"></i>
-            <h3>Complex PLC Control Overview</h3>
+            <h3>Sequenced Output Control</h3>
           </div>
           <div class="card-content">
-            <p>The physical system (i.e. the wiring) has not changed but the behaviour has. In worksheet 1, the logic was basic, if we get input 0, then turn on the 3 outputs. Now we're dealing with a more complex system. If we get input 0, latch that as a start command, and then start a sequence to turn on one output at a time, until they're all on.</p>
+            <p>Sequenced outputs are fundamental to automation systems. Unlike simple on/off control, sequenced systems move through different states in a specific order. The traffic light system demonstrates how a PLC can manage multiple outputs in a timed sequence, ensuring each state occurs for the correct duration before moving to the next.</p>
           </div>
         </div>
 
@@ -186,10 +203,10 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-chart-line"></i>
-            <h3>System Behavior & Safety</h3>
+            <h3>State Machine Operation</h3>
           </div>
           <div class="card-content">
-            <p>Releasing Input 0, makes no difference anymore, due to the PLC program - the command is latched on. The PLC will only break this command if you press the red button on Input 2 or if you press the Emergency Stop. Remember: Our button is still a momentary button, but it is being latched by the PLC software.</p>
+            <p>The traffic light system is a state machine - each state (Red, Red+Amber, Green, Amber) has specific outputs active and transitions occur based on timer conditions. This pattern is used throughout industry for controlling assembly lines, robotic systems, and process equipment where operations must happen in a specific sequence.</p>
           </div>
         </div>
 
@@ -201,13 +218,13 @@
     <div class="worksheet-section key-takeaways-section">
       <h2 class="section-header"><i class="fas fa-list-check"></i> Key Takeaways</h2>
       <ul>
-        <li>Complex PLC systems use multiple inputs, outputs, and steps to complete a process.</li>
-        <li>The same hardware can do simple or complex tasks based on the PLC's program.</li>
-        <li>A start button can be latched in the PLC so the process keeps going without holding the button.</li>
-        <li>Emergency or stop buttons can interrupt the process for safety.</li>
-        <li>These systems rely on sensors and programmed logic to work safely and reliably.</li>
-        <li>Most real PLC systems use sequences and latches to manage complex tasks.</li>
-        <li>Understanding the program and I/O states is key for fault finding.</li>
+        <li>Sequenced outputs control systems where outputs turn on and off in a specific order.</li>
+        <li>State machines use defined states with specific outputs and controlled transitions between them.</li>
+        <li>Traffic light systems demonstrate classic sequencing control with timed state transitions.</li>
+        <li>Timers control how long each state remains active before transitioning to the next.</li>
+        <li>Industrial automation uses sequencing for assembly lines, robotic systems, and process control.</li>
+        <li>Understanding sequences is essential for troubleshooting automated systems.</li>
+        <li>The Matrix PLC LOGO! Module can implement complex sequencing with simple programming.</li>
       </ul>
     </div>
 
@@ -216,11 +233,11 @@
       <h2 class="section-header"><i class="fas fa-question-circle"></i> Questions</h2>
       <div class="questions-content">
         <div class="question-item" data-question="1">
-          <h4>Question 1: What does a complex PLC system control?</h4>
+          <h4>Question 1: What is a sequenced output system?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-1" value="A">
-              <span class="option-text">A) Step-by-step processes using inputs, outputs, and logic, like in real factory systems</span>
+              <span class="option-text">A) A system where outputs turn on and off in a specific order, like traffic lights</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="B">
@@ -239,7 +256,7 @@
             <button class="submit-question-btn" onclick="submitAnswer(1)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> A) Step-by-step processes using inputs, outputs, and logic, like in real factory systems
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) A system where outputs turn on and off in a specific order, like traffic lights
           </div>
         </div>
 
@@ -267,80 +284,80 @@
             <button class="submit-question-btn" onclick="submitAnswer(2)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> B) The outputs turn on one by one in a sequence, even after you release the button
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) Red and Amber lights come on together
           </div>
         </div>
 
         <div class="question-item" data-question="3">
-          <h4>Question 3: What does it mean when the PLC latches a signal?</h4>
+          <h4>Question 3: What is a state machine in automation?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-3" value="A">
-              <span class="option-text">A) The PLC stores the input signal in memory, so the process keeps running without holding the button</span>
+              <span class="option-text">A) A system with defined states and controlled transitions between them</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="B">
-              <span class="option-text">B) The signal is ignored</span>
+              <span class="option-text">B) A machine that makes states</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="C">
-              <span class="option-text">C) The button must be held down</span>
+              <span class="option-text">C) A button that must be held down</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="D">
-              <span class="option-text">D) The system resets</span>
+              <span class="option-text">D) A system that resets automatically</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(3)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> A) The PLC stores the input signal in memory, so the process keeps running without holding the button
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) A system with defined states and controlled transitions between them
           </div>
         </div>
 
         <div class="question-item" data-question="4">
-          <h4>Question 4: How can the process be stopped once it starts?</h4>
+          <h4>Question 4: What controls the timing between traffic light states?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-4" value="A">
-              <span class="option-text">A) By turning off power</span>
+              <span class="option-text">A) Manual button presses</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="B">
-              <span class="option-text">B) By pressing I0 again</span>
+              <span class="option-text">B) Random timing</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="C">
-              <span class="option-text">C) By pressing the red stop button (I2) or the emergency stop</span>
+              <span class="option-text">C) Timers programmed in the PLC</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="D">
-              <span class="option-text">D) It cannot be stopped</span>
+              <span class="option-text">D) External sensors only</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(4)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> C) By pressing the red stop button (I2) or the emergency stop
+            <strong style="color: #4CAF50;">Correct Answer:</strong> C) Timers programmed in the PLC
           </div>
         </div>
 
         <div class="question-item" data-question="5">
-          <h4>Question 5: Why is understanding PLC logic important for fault finding?</h4>
+          <h4>Question 5: Why are sequenced systems important in industrial automation?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-5" value="A">
-              <span class="option-text">A) Because most real systems are complex, and you need to know how the program works to fix problems</span>
+              <span class="option-text">A) They ensure operations happen in the correct order for safety and efficiency</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-5" value="B">
-              <span class="option-text">B) It's not important</span>
+              <span class="option-text">B) They're not important</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-5" value="C">
-              <span class="option-text">C) Only for programming new systems</span>
+              <span class="option-text">C) Only for traffic light systems</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-5" value="D">
@@ -351,7 +368,7 @@
             <button class="submit-question-btn" onclick="submitAnswer(5)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> A) Because most real systems are complex, and you need to know how the program works to fix problems
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) They ensure operations happen in the correct order for safety and efficiency
           </div>
         </div>
       </div>
@@ -368,7 +385,7 @@
         </button>
       </div>
       <div class="worksheet-header-center">
-        <h1 class="worksheet-title">Worksheet 2 - Complex PLC Systems</h1>
+        <h1 class="worksheet-title">Worksheet 2 - Sequenced Outputs</h1>
       </div>
       <div class="worksheet-header-right">
         <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-3.html'">

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix TSL - HMIs</title>
-  <link rel="stylesheet" href="main.css">
+  <title>Matrix TSL - Pulse Width Modulation</title>
+  <link rel="stylesheet" href="main.c          <h4>Question 2: What does a 50% duty cycle mean in PWM?</h4>s">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">
   <link rel="manifest" href="manifest.json">
@@ -27,7 +27,7 @@
           </button>
         </div>
         <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 3 - HMIs</h1>
+          <h1 class="worksheet-title">Worksheet 3 - Pulse Width Modulation</h1>
         </div>
         <div class="worksheet-header-right">
           <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-4.html'">
@@ -43,11 +43,11 @@
       <div class="worksheet-content">
         <div class="introduction-content-wrapper">
           <div class="introduction-text">
-            <p>An HMI is the touchscreen or control panel you see in front of industrial systems. It is how operators monitor what is going on in a process and send commands to the PLC. Operators use HMIs to navigate menus, view real-time input and output data, and see how alarms or errors show up. HMIs are essential for operators to safely and effectively control machines and processes.</p>
+            <p>Pulse Width Modulation (PWM) is a technique used to control the speed of motors and brightness of lights by rapidly switching the output on and off. Instead of varying voltage directly, PWM changes the ratio of 'on' time to 'off' time (called duty cycle) to control the average power delivered to the load. This efficient method is widely used in industrial automation for motor speed control and lighting systems.</p>
           </div>
           <div class="introduction-image">
             <div class="system-diagram">
-              <img src="assets/maintenance/ws3.png" alt="Status LED System">
+              <img src="assets/maintenance/ws3.png" alt="PWM System">
             </div>
           </div>
         </div>
@@ -58,20 +58,20 @@
     <div class="worksheet-section over-to-you-section">
       <h2 class="section-header"><i class="fas fa-hands-helping"></i> 2. Over To You</h2>
       <div class="worksheet-content">
-        <p><strong>Follow these steps to explore the HMI and the batch mixing process:</strong></p>
+        <p><strong>Follow these steps to explore PWM motor speed control:</strong></p>
 
         <div class="steps-container">
           <div class="step-card" data-step="1">
             <div class="step-number">1</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Open Worksheet 3</h4>
+                <h4>Build the PWM System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Navigate to Worksheet 3 on the HMI.</p>
+              <p>Connect two motors or LED outputs to your Matrix PLC LOGO! Module. Use outputs Q1 and Q2 to demonstrate PWM control on different outputs simultaneously.</p>
             </div>
           </div>
 
@@ -79,13 +79,13 @@
             <div class="step-number">2</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Check Tank Levels</h4>
+                <h4>Load Program 3</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Observe the three tank levels at the top left of the screen.</p>
+              <p>Use LOGO! Soft Comfort to load Program 3 into your PLC. This program enables PWM on Output 1 and demonstrates variable duty cycle control.</p>
             </div>
           </div>
 
@@ -93,13 +93,13 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Bottom Tank</h4>
+                <h4>Observe PWM Ramping</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Observe the bottom tank where the final mix collects.</p>
+              <p>Watch as the program ramps the duty cycle from 'fully off' (0%) to 'fully on' (100%) in small steps over a 10-second period. Observe how this affects the connected load.</p>
             </div>
           </div>
 
@@ -107,13 +107,13 @@
             <div class="step-number">4</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Change Batch</h4>
+                <h4>Monitor Output 2</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Use the dropdown at the top right to change the batch from Lotion to Cream, Serum or Cleanser.</p>
+              <p>Observe the same PWM ramping process on Output 2. Notice how both outputs can be controlled independently with different PWM parameters.</p>
             </div>
           </div>
 
@@ -121,13 +121,13 @@
             <div class="step-number">5</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Mix Process</h4>
+                <h4>Check PWM Status</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press the Mix button and observe the ingredients drain into the bottom tank. During mixing, the controls are inactive (greyed out). When complete, the Next Batch button becomes active again.</p>
+              <p>Use the LOGO! PLC's screen to view the status of each output and monitor the current PWM percentage in real-time as the duty cycle changes.</p>
             </div>
           </div>
 
@@ -135,13 +135,13 @@
             <div class="step-number">6</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Adjust Parameters</h4>
+                <h4>Test with Motor</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>There are three parameters labelled Mix 1, Mix 2, and Mix 3. Adjust them and observe how they affect the tanks draining.</p>
+              <p>If available, connect a motor through a FET to Output 2 and observe how PWM controls motor speed. Compare the functionality with LED control.</p>
             </div>
           </div>
         </div>
@@ -156,30 +156,30 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-cogs"></i>
-            <h3>Why this matters</h3>
+            <h3>Why PWM Matters</h3>
           </div>
           <div class="card-content">
-            <p>This is a typical HMI screen you will find in any factory, anywhere in the world. This particular example is of a batch mixing process. There are four tanks, three with the ingredients and the fourth is the final mixed product. Operators, not maintenance engineers, use these screens daily to control a process. However, maintenance engineers will need to use them during maintenance of the machine to test and troubleshoot. Sometimes you can adjust certain parameters on the screen, other times the on-screen components are for information only. This is not always obvious—reading the user manual that comes with the HMI or system is essential.</p>
+            <p>Motor speed is rarely adjusted by changing the supply voltage directly. Instead, control is achieved by pulsing the output rapidly and adjusting the ratio of 'on' time to 'off' time. This technique, known as Pulse Width Modulation (PWM), is efficient and widely used for controlling motors, lighting, and other variable loads. In many systems, PWM signals are also used as control inputs to variable frequency drives (VFDs), which then regulate motor speed more precisely.</p>
           </div>
     </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-display"></i>
-            <h3>How it's used on site</h3>
+            <h3>How PWM Works</h3>
           </div>
           <div class="card-content">
-            <p>HMIs let you start and stop processes, change batches, view IO status, and acknowledge alarms. When fault-finding, use the HMI to see which sensors are active, what outputs are on, and what the system thinks is happening.</p>
+            <p>PWM works by switching the output on and off very quickly. The percentage of time the output is 'on' versus 'off' determines the average power delivered to the load. A 50% duty cycle means the output is on half the time and off half the time, delivering 50% of the full power to the connected device.</p>
           </div>
         </div>
 
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-triangle-exclamation"></i>
-            <h3>What to watch for</h3>
+            <h3>Industrial Applications</h3>
           </div>
           <div class="card-content">
-            <p>Some values are read-only and some are adjustable. Always check the alarm banner and the dedicated Faults/Alarms page. If the screen is locked or unclear, use the user manual for that HMI to avoid changing the wrong setting.</p>
+            <p>PWM is essential in industrial automation for variable speed motor control, LED dimming, heating element control, and servo positioning. It provides precise control while maintaining high efficiency, making it ideal for energy-conscious applications.</p>
           </div>
         </div>
 
@@ -189,12 +189,13 @@
      <div class="worksheet-section key-takeaways-section">
        <h2 class="section-header"><i class="fas fa-list-check"></i> Key Takeaways</h2>
        <ul>
-         <li>HMIs are essential for operators to monitor and control industrial processes safely and effectively.</li>
-         <li>HMIs show real-time data like tank levels and alarms and allow you to adjust process parameters.</li>
-         <li>In batch mixing processes, HMIs display how ingredients are combined and let you change batch settings.</li>
-         <li>Operators use HMIs every day, but maintenance engineers use them too during troubleshooting and testing.</li>
-         <li>Not all HMI screens allow changes. Some only display data, while others let you adjust parameters.</li>
-         <li>Always read the user manual for your specific HMI.</li>
+         <li>PWM controls motor speed and lighting by rapidly switching outputs on and off.</li>
+         <li>Duty cycle is the percentage of time an output is 'on' versus 'off' in each cycle.</li>
+         <li>PWM is more efficient than voltage control for variable speed applications.</li>
+         <li>The Matrix PLC LOGO! Module can generate PWM signals on multiple outputs simultaneously.</li>
+         <li>PWM is widely used in industry for motor drives, LED dimming, and heating control.</li>
+         <li>Variable frequency drives (VFDs) often use PWM input signals for precise motor control.</li>
+         <li>Understanding PWM is essential for troubleshooting variable speed systems in automation.</li>
        </ul>
      </div>
 
@@ -203,30 +204,30 @@
       <h2 class="section-header"><i class="fas fa-question-circle"></i> Questions & Answers</h2>
       <div class="questions-content">
         <div class="question-item" data-question="1">
-          <h4>Question 1: What is the purpose of an HMI in an industrial system?</h4>
+          <h4>Question 1: What does PWM stand for and what does it control?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-1" value="A" class="option-radio">
-              <span class="option-text">A) An HMI lets operators view system status and send commands to the PLC</span>
+              <span class="option-text">A) Pulse Width Modulation - controls motor speed and lighting by varying duty cycle</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="B" class="option-radio">
-              <span class="option-text">B) To provide lighting for the work area</span>
+              <span class="option-text">B) Power Wire Management - controls electrical connections</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="C" class="option-radio">
-              <span class="option-text">C) To measure system temperature</span>
+              <span class="option-text">C) Process Water Monitoring - measures temperature</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="D" class="option-radio">
-              <span class="option-text">D) To control system power</span>
+              <span class="option-text">D) Pressure Warning Module - controls system power</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(1)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> A) An HMI lets operators view system status and send commands to the PLC.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) Pulse Width Modulation - controls motor speed and lighting by varying duty cycle.
           </div>
         </div>
         
@@ -235,110 +236,110 @@
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-2" value="A" class="option-radio">
-              <span class="option-text">A) It shows a motor speed control screen</span>
+              <span class="option-text">A) The output runs at half voltage</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="B" class="option-radio">
-              <span class="option-text">B) It shows a motor speed control screen</span>
+              <span class="option-text">B) The motor runs at half speed</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="C" class="option-radio">
-              <span class="option-text">C) It shows a batch mixing process with ingredient tanks and a final product tank</span>
+              <span class="option-text">C) The output is 'on' 50% of the time and 'off' 50% of the time</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="D" class="option-radio">
-              <span class="option-text">D) It shows a pressure control screen</span>
+              <span class="option-text">D) The system is only half functional</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(2)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> C) It shows a batch mixing process with ingredient tanks and a final product tank.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> C) The output is 'on' 50% of the time and 'off' 50% of the time.
           </div>
         </div>
         
         <div class="question-item" data-question="3">
-          <h4>Question 3: What happens when you press the Mix button?</h4>
+          <h4>Question 3: Why is PWM more efficient than varying voltage directly?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-3" value="A" class="option-radio">
-              <span class="option-text">A) The screen changes to the alarms page automatically</span>
+              <span class="option-text">A) PWM reduces energy waste by using rapid switching instead of continuous voltage regulation</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="B" class="option-radio">
-              <span class="option-text">B) The three tanks drain into the bottom tank, and controls are locked until mixing finishes</span>
+              <span class="option-text">B) PWM makes the motor run faster</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="C" class="option-radio">
-              <span class="option-text">C) The tanks fill up from the bottom tank</span>
+              <span class="option-text">C) PWM uses more electricity</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="D" class="option-radio">
-              <span class="option-text">D) Nothing happens</span>
+              <span class="option-text">D) PWM is not more efficient</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(3)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> B) The three tanks drain into the bottom tank, and controls are locked until mixing finishes.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) PWM reduces energy waste by using rapid switching instead of continuous voltage regulation.
           </div>
         </div>
         
         <div class="question-item" data-question="4">
-          <h4>Question 4: Why are some HMI controls greyed out during mixing?</h4>
+          <h4>Question 4: What applications commonly use PWM in industrial automation?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-4" value="A" class="option-radio">
-              <span class="option-text">A) To save energy on the HMI</span>
+              <span class="option-text">A) Only lighting control</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="B" class="option-radio">
-              <span class="option-text">B) So operators cannot see the process</span>
+              <span class="option-text">B) Only temperature sensors</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="C" class="option-radio">
-              <span class="option-text">C) Because the PLC is offline</span>
+              <span class="option-text">C) Only emergency systems</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="D" class="option-radio">
-              <span class="option-text">D) To prevent changes during critical parts of the process, keeping the system safe</span>
+              <span class="option-text">D) Variable speed motors, LED dimming, heating elements, and servo positioning</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(4)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> D) To prevent changes during critical parts of the process, keeping the system safe.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> D) Variable speed motors, LED dimming, heating elements, and servo positioning.
           </div>
         </div>
         
         <div class="question-item" data-question="5">
-          <h4>Question 5: How can maintenance engineers use HMIs during fault finding?</h4>
+          <h4>Question 5: How does PWM relate to Variable Frequency Drives (VFDs)?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-5" value="A" class="option-radio">
-              <span class="option-text">A) They use it to change PLC firmware</span>
+              <span class="option-text">A) PWM signals are often used as control inputs to VFDs for precise motor speed control</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-5" value="B" class="option-radio">
-              <span class="option-text">B) They use it to check inputs, outputs, alarms, and test system behaviour</span>
+              <span class="option-text">B) VFDs cannot use PWM signals</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-5" value="C" class="option-radio">
-              <span class="option-text">C) They use it to paint the machine</span>
+              <span class="option-text">C) PWM replaces VFDs completely</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-5" value="D" class="option-radio">
-              <span class="option-text">D) They use it to disable all safety systems</span>
+              <span class="option-text">D) VFDs only work with analog signals</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(5)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> B) They use it to check inputs, outputs, alarms, and test system behaviour.
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) PWM signals are often used as control inputs to VFDs for precise motor speed control.
           </div>
         </div>
       </div>
@@ -356,7 +357,7 @@
         </button>
       </div>
       <div class="worksheet-header-center">
-        <h1 class="worksheet-title">Worksheet 3 - HMIs</h1>
+        <h1 class="worksheet-title">Worksheet 3 - Pulse Width Modulation</h1>
       </div>
       <div class="worksheet-header-right">
         <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-4.html'">
