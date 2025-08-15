@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix TSL - Simple PLC Systems</title>
+  <title>Matrix PLC LOGO! Module - Basic Outputs</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="assets/icons/matrix-icon.ico">
@@ -73,7 +73,7 @@
           </button>
         </div>
         <div class="worksheet-header-center">
-          <h1 class="worksheet-title">Worksheet 1 - Simple PLC Systems</h1>
+          <h1 class="worksheet-title">Worksheet 1 - Basic Outputs</h1>
         </div>
         <div class="worksheet-header-right">
           <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-2.html'">
@@ -90,11 +90,11 @@
       <div class="worksheet-content">
         <div class="introduction-content-wrapper">
           <div class="introduction-text">
-            <p>The Siemens LOGO! PLCTraining rig in front of you represents a basic industrial control system like those used in factories. It includes real components such as push buttons, lights, motors, and a Siemens PLC that controls them. This worksheet introduces the core concept of how a PLC processes inputs to control outputs.</p>
+            <p>Modern industrial control systems, including PLCs, typically provide two types of outputs: low-current transistor outputs and high-current relay outputs. Transistor outputs are fast and ideal for driving signals to other control devices, but they can't handle much current directly. Relay outputs, while slower due to their mechanical switching, are robust and better suited to driving loads like pumps, solenoids, or indicator beacons found in maintenance systems.</p>
           </div>
           <div class="introduction-image">
             <div class="system-diagram">
-              <img src="assets/maintenance/ws1.png" alt="Siemens S7-1200 PLC">
+              <img src="assets/maintenance/ws1.png" alt="Industrial Warning Beacon and PLC Output System">
             </div>
           </div>
         </div>
@@ -105,20 +105,20 @@
     <div class="worksheet-section over-to-you-section">
       <h2 class="section-header"><i class="fas fa-hands-helping"></i> 2. Over To You</h2>
       <div class="worksheet-content">
-        <p><strong>Navigate to Worksheet 1 and observe the simple PLC control system. This system demonstrates basic input/output control where a button controls a light.</strong></p>
+        <p><strong>Assemble the Locktronics system and explore PLC output types. This system demonstrates how PLCs control different types of outputs using transistor and relay switching.</strong></p>
         
         <div class="steps-container">
           <div class="step-card" data-step="1">
             <div class="step-number">1</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Navigate to Worksheet 1</h4>
+                <h4>Assemble the Locktronics System</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>When on the Home Page, press the Start button to enter the Main Menu, select Worksheets and then Worksheet 1.</p>
+              <p>Assemble the Locktronics system as shown in the diagram. Connect the LOGO! PLC to the modular components using the quick-release connectors.</p>
             </div>
           </div>
           
@@ -126,13 +126,13 @@
             <div class="step-number">2</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Observe the System</h4>
+                <h4>Load Program 1</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Observe the picture in the centre of the screen. It displays a simple PLC control system, where a Siemens PLC controls a lamp above the panel.</p>
+              <p>Load Program 1 onto the LOGO! PLC. This program will cycle through outputs 1 to 4, turning each one on in sequence.</p>
             </div>
           </div>
           
@@ -140,13 +140,13 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Test Input I0</h4>
+                <h4>Observe Output Sequence</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press & hold button I0. Observe the light change turn on Red.</p>
+              <p>Watch as the program cycles through outputs 1 to 4, turning each LED on in sequence. Observe how each output responds.</p>
             </div>
           </div>
           
@@ -154,13 +154,13 @@
             <div class="step-number">4</div>
             <div class="step-content">
               <div class="step-header">
-                <h4>Observe LED Behavior</h4>
+                <h4>Monitor PLC Status Display</h4>
                 <label class="step-checkbox">
                   <input type="checkbox" class="step-complete-checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <p>Press & Release the button a few times. You should observe the LED on the left & right of the image, turning on and off. You should also observe the LEDs on the PLC turning on and off.</p>
+              <p>The LOGO! PLC's screen displays the status of each output during operation. Watch the screen to see which outputs are active.</p>
             </div>
           </div>
         </div>
@@ -175,10 +175,10 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-cogs"></i>
-            <h3>Simple PLC Control Overview</h3>
+            <h3>PLC Output Types</h3>
           </div>
           <div class="card-content">
-            <p>When you were pressing the button at Input 0, the output was only active whilst you held the button. This is called a momentary button – it only works whilst pressed down. When you released the button, the output turned off. The PLC code here is looking for the input signal and only turning on the output whilst it has this signal.</p>
+            <p>In industrial maintenance, understanding the output capabilities of your PLC is essential. Transistor outputs vary between models, so always check the voltage and current ratings before connecting equipment. When a controller can't drive a load directly such as a motor, solenoid, or warning light, external relays are used to handle the higher current.</p>
           </div>
         </div>
 
@@ -186,10 +186,10 @@
         <div class="explanation-card">
           <div class="card-header">
             <i class="fas fa-chart-line"></i>
-            <h3>System Behavior & Learning</h3>
+            <h3>Electrical Isolation & Safety</h3>
           </div>
           <div class="card-content">
-            <p>Simple PLC systems are the first step into the world of automation. They use a PLC (programmable logic controller) to turn things on and off based on what it's been programmed to do, like switching on a light when you press a button. These systems have only a few parts and no complicated logic. They're easy to understand and perfect for learning how basic industrial control panels work.</p>
+            <p>Even with a common ground, relays provide electrical isolation between the control and power circuits, which is critical during fault-finding or system upgrades. Some PLCs lack internal relays, so maintenance teams must account for this when designing control systems or troubleshooting equipment failures.</p>
           </div>
         </div>
 
@@ -201,11 +201,12 @@
     <div class="worksheet-section key-takeaways-section">
       <h2 class="section-header"><i class="fas fa-list-check"></i> Key Takeaways</h2>
       <ul>
-        <li>Simple PLC systems control basic on/off actions, like switching on a light with a button.</li>
-        <li>They consist of a few parts: push buttons, indicator lights, and a PLC.</li>
-        <li>The PLC processes simple instructions – if the button is pressed, turn the light on.</li>
-        <li>You can see the PLC's internal logic via the PLC LEDs turning on and off.</li>
-        <li>These simple systems are the building blocks for more complex industrial processes.</li>
+        <li>PLCs provide two main output types: low-current transistor outputs and high-current relay outputs.</li>
+        <li>Transistor outputs are fast and ideal for signals to other control devices but have limited current capacity.</li>
+        <li>Relay outputs are slower but robust, better suited for driving pumps, solenoids, and indicator beacons.</li>
+        <li>External relays provide electrical isolation between control and power circuits for safety.</li>
+        <li>Always check voltage and current ratings before connecting equipment to PLC outputs.</li>
+        <li>Understanding output capabilities is essential for industrial maintenance and troubleshooting.</li>
       </ul>
     </div>
 
@@ -214,114 +215,142 @@
       <h2 class="section-header"><i class="fas fa-question-circle"></i> Questions</h2>
       <div class="questions-content">
         <div class="question-item" data-question="1">
-          <h4>Question 1: What type of control does this system demonstrate?</h4>
+          <h4>Question 1: What are the two main types of PLC outputs?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-1" value="A">
-              <span class="option-text">A) Simple on/off control using a momentary button</span>
+              <span class="option-text">A) Low-current transistor outputs and high-current relay outputs</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="B">
-              <span class="option-text">B) Complex sequence control</span>
+              <span class="option-text">B) Digital and analog outputs</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="C">
-              <span class="option-text">C) Analog control</span>
+              <span class="option-text">C) AC and DC outputs</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-1" value="D">
-              <span class="option-text">D) PID control</span>
+              <span class="option-text">D) Input and output signals</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(1)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> A) Simple on/off control using a momentary button
+            <strong style="color: #4CAF50;">Correct Answer:</strong> A) Low-current transistor outputs and high-current relay outputs
           </div>
         </div>
 
         <div class="question-item" data-question="2">
-          <h4>Question 2: What happens when you press and hold input I0?</h4>
+          <h4>Question 2: What are transistor outputs best suited for?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-2" value="A">
-              <span class="option-text">A) Nothing happens</span>
+              <span class="option-text">A) Driving high-power motors</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="B">
-              <span class="option-text">B) The system shuts down</span>
+              <span class="option-text">B) Driving signals to other control devices</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="C">
-              <span class="option-text">C) The light turns on red and stays on while the button is held</span>
+              <span class="option-text">C) Operating heavy machinery</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-2" value="D">
-              <span class="option-text">D) The light flashes</span>
+              <span class="option-text">D) Powering indicator beacons</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(2)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> C) The light turns on red and stays on while the button is held
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) Driving signals to other control devices
           </div>
         </div>
 
         <div class="question-item" data-question="3">
-          <h4>Question 3: What do the PLC's status LEDs show during operation?</h4>
+          <h4>Question 3: Why are relay outputs preferred for driving loads like pumps and solenoids?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-3" value="A">
-              <span class="option-text">A) Battery level</span>
+              <span class="option-text">A) They are faster than transistor outputs</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="B">
-              <span class="option-text">B) System errors</span>
+              <span class="option-text">B) They are more accurate</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="C">
-              <span class="option-text">C) Network status</span>
+              <span class="option-text">C) They are robust and can handle higher current</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-3" value="D">
-              <span class="option-text">D) Input and output states turning on and off</span>
+              <span class="option-text">D) They consume less power</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(3)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> D) Input and output states turning on and off
+            <strong style="color: #4CAF50;">Correct Answer:</strong> C) They are robust and can handle higher current
           </div>
         </div>
 
         <div class="question-item" data-question="4">
-          <h4>Question 4: Where might a system like this be used in real industrial settings?</h4>
+          <h4>Question 4: What is a key benefit of relays in control circuits?</h4>
           <div class="multiple-choice-options">
             <label class="option-label">
               <input type="radio" name="question-4" value="A">
-              <span class="option-text">A) Complex manufacturing processes</span>
+              <span class="option-text">A) They increase signal speed</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="B">
-              <span class="option-text">B) Chemical mixing systems</span>
+              <span class="option-text">B) They provide electrical isolation between control and power circuits</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="C">
-              <span class="option-text">C) Temperature control systems</span>
+              <span class="option-text">C) They reduce system complexity</span>
             </label>
             <label class="option-label">
               <input type="radio" name="question-4" value="D">
-              <span class="option-text">D) Simple fan or alarm control systems</span>
+              <span class="option-text">D) They eliminate the need for maintenance</span>
             </label>
           </div>
           <div class="question-actions">
             <button class="submit-question-btn" onclick="submitAnswer(4)">Submit Answer</button>
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-            <strong style="color: #4CAF50;">Correct Answer:</strong> D) Simple fan or alarm control systems
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) They provide electrical isolation between control and power circuits
+          </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+          <h4>Question 5: What should you always check before connecting equipment to PLC outputs?</h4>
+          <div class="multiple-choice-options">
+            <label class="option-label">
+              <input type="radio" name="question-5" value="A">
+              <span class="option-text">A) The color of the wires</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-5" value="B">
+              <span class="option-text">B) The brand of the equipment</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-5" value="C">
+              <span class="option-text">C) The voltage and current ratings</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-5" value="D">
+              <span class="option-text">D) The installation date</span>
+            </label>
+          </div>
+          <div class="question-actions">
+            <button class="submit-question-btn" onclick="submitAnswer(5)">Submit Answer</button>
+          </div>
+          <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
+            <strong style="color: #4CAF50;">Correct Answer:</strong> C) The voltage and current ratings
           </div>
         </div>
       </div>
@@ -338,7 +367,7 @@
         </button>
       </div>
       <div class="worksheet-header-center">
-        <h1 class="worksheet-title">Worksheet 1 - Simple PLC Systems</h1>
+        <h1 class="worksheet-title">Worksheet 1 - Basic Outputs</h1>
       </div>
       <div class="worksheet-header-right">
         <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-2.html'">
