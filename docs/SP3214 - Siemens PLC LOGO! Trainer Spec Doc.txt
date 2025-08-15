@@ -1,5 +1,5 @@
 IM3214
-Name: Matrix PLC LOGO! Module
+Name: Siemens PLC LOGO! Module
 Product Range: Industrial Maintenance
 Product Code: IM3214
 Curriculum Code: CP6211
@@ -15,7 +15,7 @@ Volume: XX
 Gross Weight: XX
 
 Product Description
-The Matrix PLC LOGO! Module introduces learners to core concepts in industrial automation
+The Siemens PLC LOGO! Module introduces learners to core concepts in industrial automation
 and programmable control in a compact, self-contained system. Designed around the Siemens LOGO! PLC and the versatile Locktronics platform, the module enables hands-on exploration of PLC programming, control logic, and real-world I/O systems.
 The integrated LOGO! controller provides both wired and wireless connectivity, supporting
 program upload via MicroSD. Students can control logic-driven outputs and view system
@@ -33,7 +33,7 @@ systems and is designed to integrate seamlessly with other Matrix industrial tra
 IM3214
 
 Key Features
-Matrix PLC LOGO! Module allows students to engage directly with the principles of programmable
+Siemens PLC LOGO! Module allows students to engage directly with the principles of programmable
 logic control through hands-on experimentation and real-world industrial components.
 Covers core automation and control topics including logic gates, timers, counters, I/O devices, and
 system integration.
@@ -50,7 +50,7 @@ LAN/Wi-Fi.
 Compatible with Siemens LOGO! Soft Comfort software for full programming and monitoring.
 Supplied with tested MicroSD card preloaded with example programs for common control experiments.
 Modular Design:
-The Matrix PLC LOGO! Module is built for flexibility, allowing components to be arranged on a single Locktronics board or spread across two or three boards depending on the experiment complexity.
+The Siemens PLC LOGO! Module is built for flexibility, allowing components to be arranged on a single Locktronics board or spread across two or three boards depending on the experiment complexity.
 The module clicks securely into place using Locktronics pillars, keeping the circuit layout clean and
 minimizing the need for excessive wiring or wire carriers.
 This approach reduces visual clutter, simplifies fault tracing, and improves student understanding
@@ -150,7 +150,7 @@ LK5603
 LK5604
 
 Description
-Matrix PLC LOGO! Module
+Siemens PLC LOGO! Module
 Spare Locktronics Legs
 7 * 5 Locktronics Base Board with 4mm Pillars
 24V PSU 60w 2.5a

@@ -1,4 +1,4 @@
-// Service Worker for Matrix IM6930 Curriculum
+// Service Worker for Matrix IM3214 Curriculum
 const CACHE_NAME = 'matrix-training-cache-v1';
 
 // Resources to cache

@@ -1,4 +1,4 @@
-IM3214 Matrix PLC LOGO! Module User Manual
+IM3214 Siemens PLC LOGO! Module User Manual
 
 IM3214
 www.matrixtsl.com
