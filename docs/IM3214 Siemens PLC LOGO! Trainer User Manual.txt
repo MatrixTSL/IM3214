@@ -1,0 +1,275 @@
+IM3214 Matrix PLC LOGO! Module User Manual
+
+IM3214
+www.matrixtsl.com
+Copyright 2025 Matrix Technology Solutions Limited
+
+Copyright © 2025 Matrix Technology Solutions
+
+Page 1
+
+Contents
+
+Using Our Siemens LOGO! Module
+
+3
+
+Parameter Specification
+
+4
+
+Program Transfer
+
+4
+
+Locktronics Legs
+
+6
+
+PLC Analogue Inputs
+
+8
+
+Version control
+
+9
+
+Copyright © 2025 Matrix Technology Solutions
+
+Page 2
+
+Using Our Siemens
+LOGO! Module
+Matrix LOGO! PLC Module
+
+At Matrix, we have developed a dedicated PLC module using the Siemens LOGO! logic controller, designed specifically to integrate seamlessly with our Locktronics educational system. This
+setup makes it easy for students and educators to explore PLC programming and control theory
+within a familiar, hands-on environment. By combining the flexibility of the LOGO! PLC with the
+modular, visual layout of Locktronics, users can quickly prototype and test real industrial scenarios without needing complex wiring or tools.
+The Matrix LOGO! Module features five digital inputs located at the top of the unit and four transistor outputs along the bottom edge. These I/O points allow for a wide range of sensor and actuator connections, from simple switches and lamps to more complex devices. For best results,
+we recommend using standard 4mm plugs for connection, though direct linking to the Locktronics pillars is also fully supported. Please note that each output is limited to a maximum current
+of 0.4A, which is suitable for most educational and light industrial components.
+Programming the LOGO! PLC is done using Siemens’ LOGO! Soft Comfort software, which can
+be downloaded from the Siemens website. The software features a drag-and-drop interface that
+simplifies logic programming and makes it accessible for learners. While a free trial is available,
+a full license may be required for extended use this can be purchased by contacting us directly.
+To support teaching and learning, we also provide a range of example programs tailored for use
+with Locktronics, all available for download from our website.
+
+Copyright © 2025 Matrix Technology Solutions
+
+Page 3
+
+Specifications
+Parameter Specification
+Physical Features
+•Integrated mounting legs for Locktronics baseboards
+•IP Rating: IP20 (suitable for indoor educational/lab use only)
+•Compatible with 4mm stackable plugs and Locktronics pillar system
+•MicroSDHC slot for program transfer (supports FAT32-formatted cards ≤32GB)
+
+Programming
+•Software: Siemens LOGO! Soft Comfort
+•File Type: .lsc files loaded via SD card
+•Supported SD cards: Class 4/10 MicroSDHC, FAT32 format
+•Programs are transferred manually; PC and SD card reader required
+
+Mounting & Installation
+•Fits on standard Locktronics baseboards
+•Align all metal legs with Locktronics pillars before insertion
+•Avoid forcing module to prevent leg damage
+
+Applications
+•Education and training in industrial PLC systems
+•Teaching digital and analogue I/O concepts
+•Integration with sensors, actuators, and control logic demonstrations
+•Use in open-loop and closed-loop control experiments
+
+Safety & Use Notes
+•For low-voltage educational use only
+•Do not exceed 0.4A per output channel
+•Ensure analogue signals do not exceed 10V to avoid PLC damage
+•Provide proper electrical isolation when connecting external loads
+
+Copyright © 2025 Matrix Technology Solutions
+
+Page 4
+
+Specifications
+Parameter Specification
+Parameter
+
+Specification
+
+Power Supply
+
+24V DC
+
+Permissible Voltage Range
+
+20.4 – 28.8V DC
+
+Maximum Current Draw
+
+2A Input
+
+Output Type
+
+Transistor (open collector)
+
+Max Output Current (per channel)
+
+0.3A (recommended), up to 0.4A absolute
+
+Digital Inputs
+
+5 (top edge)
+
+Digital Outputs
+
+4 (bottom edge)
+
+Analogue Inputs
+
+Up to 4 configurable (0–10V input range)
+
+Copyright © 2025 Matrix Technology Solutions
+
+Page 5
+
+Transferring Programs
+with SD Card
+You Will Need:
+•
+
+Matrix USB stick (contains your .lsc program files)
+
+•
+
+Supplied SD card USB reader with SD card inserted
+
+•
+
+A Windows PC
+
+•
+
+Siemens LOGO! PLC
+
+Before You Begin:
+Important SD Card Information
+•
+
+Siemens LOGO! supports only microSD cards up to 32 GB, formatted as FAT32.
+
+•
+
+LOGO! can store only one circuit program in its memory.
+
+•
+
+To switch between programs without overwriting, archive each one externally or use separate SD cards.
+
+•
+
+LOGO! only loads a program from an SD card if it’s saved in binary format with the exact filename
+LOGO_U_P.bin.
+
+•
+
+Use LOGO! Soft Comfort to export the program correctly.
+
+•
+
+Each LOGO! device in a multi-PLC project must have its own SD card with the respective program.
+
+Steps:
+1.
+
+Insert the USB Stick and open File Explorer, find the worksheet you’re working on and locate the .bin program file, typically named LOGO_U_P.bin.
+
+2.
+
+Insert the SD card reader into another USB port on your PC and wait for Windows to detect and mount it as
+a removable drive.
+
+3.
+
+Copy the LOGO_U_P.bin file from the USB stick and paste it into the root directory of the SD card. Do not place
+it inside any folders, and do not rename the file.
+
+4.
+
+Right-click the SD card drive and select Eject to safely remove it and avoid any file corruption.
+
+5.
+
+Insert the SD card into the Siemens LOGO! PLC while powered off, then power the PLC on again.
+
+6.
+
+On the LOGO! screen, navigate to Card > Load program and follow the on-screen instructions to load the
+binary file into the controller.
+
+Copyright © 2025 Matrix Technology Solutions
+
+Page 6
+
+Locktronics Legs
+When installing the Siemens LOGO! module into the Locktronics baseboard, take care to align
+all metal legs precisely with the corresponding Locktronics pillars. Although the legs are durable, applying force while misaligned can stress and potentially snap them.
+These legs can be repaired if necessary, but correct alignment before pressing the module into
+place will prevent damage and ensure a secure connection.
+
+Copyright © 2025 Matrix Technology Solutions
+
+Page 7
+
+PLC Analogue Inputs
+When working with PLCs, it's important to note that they typically operate at 24V. However, their
+analogue inputs are often designed for 0-10V or 4-20mA signals. The Siemens LOGO!, used in
+our module, supports 0-10V analogue inputs.
+This means that any external components, such as those in the Locktronics system, must be
+configured to ensure the input voltage does not exceed 10V. To achieve this, we use resistors
+to reduce the voltage down to match the PLC's input range.
+
+Configuring Analog Inputs on Siemens LOGO!
+If you are programming the Siemens LOGO! yourself, you need to be aware of the following settings;
+Step 1: Onboard AI Setting
+In LOGO! Soft Comfort, go to your device settings and choose the number of analogue inputs
+(AIs) you want to enable:
+•Enable 0 AIs: No analogue inputs available.
+•Enable 2 AIs: Only AI1 and AI2 on terminals I7 and I8.
+•Enable 4 AIs (Recommended):
+•AI1 → I7
+•AI2 → I8
+•AI3 → I1
+•AI4 → I2
+We recommend selecting “Enable 4 AIs” to take full advantage of all available analogue inputs.
+In your program, when you use AI1, you are actually reading the voltage coming into terminal
+I7.
+When you use AI4, you are reading the voltage at terminal I2.
+This mapping can seem confusing because the order of AIs (1, 2, 3, 4) doesn't match the terminal numbers (I1, I2, I7, I8). It’s just how Siemens assigned the inputs internally.
+Step 2: Wiring Sensors
+Connect analogue sensors (e.g. temperature, pressure, level) to the correct input terminals
+based on the AI mapping.
+Step 3: Programming
+Use the analogue input blocks in your program to read sensor values. These can be scaled,
+compared, or used to control outputs.
+Step 4: Test & Monitor
+Simulate or run your program live to check the sensor readings and ensure your logic works as
+expected.
+Copyright © 2025 Matrix Technology Solutions
+
+Page 8
+
+Version control
+16 04 25
+
+Document created
+
+Copyright © 2025 Matrix Technology Solutions
+
+Page 9
+
+

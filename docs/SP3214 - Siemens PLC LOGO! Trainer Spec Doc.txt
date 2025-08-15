@@ -1,0 +1,295 @@
+IM3214
+Name: Matrix PLC LOGO! Module
+Product Range: Industrial Maintenance
+Product Code: IM3214
+Curriculum Code: CP6211
+Power Supply: 24V
+Unit weight
+Weight: 1.5kg
+Length: 32cm
+Width: 90cm
+Height: 10cm
+
+Packed Specifications
+Volume: XX
+Gross Weight: XX
+
+Product Description
+The Matrix PLC LOGO! Module introduces learners to core concepts in industrial automation
+and programmable control in a compact, self-contained system. Designed around the Siemens LOGO! PLC and the versatile Locktronics platform, the module enables hands-on exploration of PLC programming, control logic, and real-world I/O systems.
+The integrated LOGO! controller provides both wired and wireless connectivity, supporting
+program upload via MicroSD. Students can control logic-driven outputs and view system
+feedback using a PC, mobile device, or built-in display.
+Experiments are built around modular components mounted to a Locktronics pillar board.
+Each component such as input switches, indicator lamps, sensors, and relays is secured using
+quick-release connectors for fast configuration and testing.
+While the product does not come with a fixed curriculum, example programs and datasheets
+are provided via SD cards for different experiment setups. We recommend using the CP6211
+Industrial Maintenance – Sense and Control curriculum alongside the LOGO! Module to maximize learning outcomes. This curriculum supports exploration of control systems, input/
+output devices, logic operations, and troubleshooting.
+The LOGO! module is a foundational tool for building and diagnosing more advanced control
+systems and is designed to integrate seamlessly with other Matrix industrial training kits.
+
+IM3214
+
+Key Features
+Matrix PLC LOGO! Module allows students to engage directly with the principles of programmable
+logic control through hands-on experimentation and real-world industrial components.
+Covers core automation and control topics including logic gates, timers, counters, I/O devices, and
+system integration.
+Base Station:
+Built around the robust Locktronics platform with a steel base and durable pillar system, ideal for
+classroom and workshop environments.
+Features a quick-swap modular layout for attaching input/output modules, relays, and sensors using secure quick-release connectors.
+Includes Siemens LOGO! PLC pre-mounted to a custom Locktronics carrier plate, enabling rapid
+setup and configuration.
+Data Logging / Computer Control:
+Supports USB and MicroSD-based program uploads.
+Features integrated web server functionality for remote HMI control via PC or mobile device over
+LAN/Wi-Fi.
+Compatible with Siemens LOGO! Soft Comfort software for full programming and monitoring.
+Supplied with tested MicroSD card preloaded with example programs for common control experiments.
+Modular Design:
+The Matrix PLC LOGO! Module is built for flexibility, allowing components to be arranged on a single Locktronics board or spread across two or three boards depending on the experiment complexity.
+The module clicks securely into place using Locktronics pillars, keeping the circuit layout clean and
+minimizing the need for excessive wiring or wire carriers.
+This approach reduces visual clutter, simplifies fault tracing, and improves student understanding
+of signal paths and logic structure.
+Recommended for use with the CP6211 Industrial Maintenance – Sense and Control curriculum to
+explore real-world control systems, automation logic, and troubleshooting practices.
+Ideal for technical education in engineering, automation, and industrial maintenance, the Matrix
+PLC LOGO! Module provides a flexible and expandable platform for developing real-world skills in
+PLC programming and system control.
+
+IM3214
+
+Learning Objectives
+Get real experience with a fantastic PLC the Siemens LOGO!
+By the end of this course, learners will be able to:
+•
+
+Distinguish between analogue and digital sensors.
+
+•
+
+Understand that simple digital sensors have a two-state output: open (off) or closed (on).
+
+•
+
+Recognize that digital sensors exhibit high resistance when open and low resistance when
+closed.
+
+•
+
+Identify that digital sensor outputs are typically either 0V or the full power supply voltage.
+
+•
+
+Recognize and understand circuit symbols for a range of switches, bulbs, and sensors.
+
+•
+
+Appreciate that some components are polarized and must be connected correctly.
+
+•
+
+Program a controller to recognize a high input voltage as an ‘on’ or ‘off’ signal.
+
+•
+
+Understand output device requirements in terms of current, and the use of relays for higher
+current delivery.
+
+•
+
+Understand the advantages of transistors over relays for faster switching.
+
+•
+
+Connect a control unit to deliver current through transistor and relay outputs.
+
+•
+
+Understand systems as comprising three core elements: input, process, and output subsystems.
+
+•
+
+Recognize that analogue sensors provide a continuous range of voltages.
+
+•
+
+Use a potentiometer to set a reference voltage for parameters such as temperature.
+
+•
+
+Differentiate between open-loop and closed-loop control systems.
+
+•
+
+Simulate an analogue voltage using a square wave with a varying duty cycle (PWM).
+
+•
+
+Understand that analogue sensor signals may require scaling or conversion to be meaningful.
+
+•
+
+Program and control PLCs using different programming languages and methods.
+
+IM3214
+
+Packing list
+Part number
+IM3214
+LK8275
+COM6654
+COM5825
+COM5826
+COM5827
+LK5603
+LK5604
+
+Description
+Matrix PLC LOGO! Module
+Spare Locktronics Legs
+7 * 5 Locktronics Base Board with 4mm Pillars
+24V PSU 60w 2.5a
+UK Power Supply Plug
+EU Power Supply Plug
+USA Power Supply Plug
+Lead Red 500mm
+Lead Black 500mm
+
+Quantity
+
+Curriculum
+
+Click here to download curriculum from our
+Learning Centre
+
+1
+8
+2
+1
+1
+1
+1
+5
+5
+
+IM3214
+
+Components
+Main Module
+
+Locktronics Board
+
+IM3214
+
+Frequently asked questions
+What software is needed to run the LOGO!?
+None, you can download our example programs and drag & drop them onto the
+SD card to get going immediately. You are also welcome to purchase Siemens
+LOGO Soft software, this will allow you to program the PLC directly.
+How many students can work with this kit?
+We would suggest that one kit would comfortably fit 2 students working around it.
+One is also fine.
+What age is the kit aimed at?
+This Industrial Maintenance PLC LOGO! Module is aimed at college and university
+students, typically those aged 16-20.
+Does the kit come with a curriculum?
+Yes, the kit comes with a full and free curriculum, which comes with comprehensive learning, student worksheets and teacher notes. This is readily available on
+the learning center.
+How does the storage work?
+Everything that comes with the kit can be stored within the tray the kit is shipped
+with.
+Does the system require mains electricity?
+No we use a 24V power supply with an accompanying UK, EU and US adapter plug.
+
+IM3214
+
+Tender Specification
+The system shall be a desktop-based, modular industrial control training system, designed to facilitate the teaching of Programmable Logic Controllers (PLCs), control system theory, and practical
+industrial automation.
+The system shall integrate a Siemens LOGO! PLC mounted onto a custom Locktronics carrier plate.
+This plate shall be compatible with standard Locktronics pillar boards and allow secure, tool-free
+installation using quick-release fixings.
+The system shall allow for the connection of multiple Locktronics boards (single, double, or triplewide configurations), supporting expanded experiments while maintaining a clean and organised
+wiring layout with minimal wire carriers.
+The system shall feature inputs and outputs accessible via 4mm connectors or directly via Locktronics pillars, supporting fast, low-resistance signal routing and clear circuit visibility for learners.
+
+The system shall include USB and MicroSD card connectivity for uploading programs, and shall support network control and monitoring via the integrated LOGO! web server interface when connected via Ethernet or Wi-Fi.
+The system shall be supplied with a range of modular components, which together enable the creation of at least nine foundational PLC experiments. These experiments shall support real-world
+applications such as digital and analogue input handling, sequencing, timing, motor control, PWM,
+fault detection, and closed-loop control.
+The system shall be supported by the CP6211 Industrial Maintenance – Sense and Control curriculum, which includes step-by-step worksheets, pre-written programs, and instructor guidance.
+The included components shall comprise:
+
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+
+Siemens LOGO! PLC on Locktronics carrier
+24V regulated pow er supply
+USB stick containing LOGO! pr ograms
+SD card with pr eloaded experiments
+Magnet
+MES bulb (24V, 0.2A)
+Buzzer (24V)
+Resistors (10 Ω, 1kΩ, 10kΩ, 100 kΩ, 200kΩ – various ratings)
+Potentiometer (10kΩ)
+Pow er FET
+Relay (24V, 10A transparent case)
+4.7kΩ NTC ther mistor
+Switches: r eed, press -to-make (morse key type), on/off stay -put, and microswitch
+Connecting links (14 units)
+LEDs (red, yellow, and green – all 24V)
+Leads:
+
+•
+•
+•
+•
+•
+•
+
+Red, black, yellow , and blue (4mm stackable, 500mm l ength)
+
+DC motor (24V)
+Solenoid (24V)
+Phototransistor
+7×5 Locktronics baseboard with 4mm pillars
+24V regulated pow er supply with UK, EU, and USA plug adapters
+
+IM3214
+
+Tender Specification
+All components shall be able to be stored within the supplied tray, optimizing space and ensuring
+easy transport. The system shall feature a compact and portable design, enabling teaching in various classroom settings and not being restricted to a laboratory environment.
+The system shall be powered by a low voltage 24V DC power supply.
+The system shall be supplied with a complete curriculum, including downloadable materials from
+the supplier's website.
+This curriculum shall include:
+•
+•
+•
+
+Approximately 8-hour course into the teaching of the fundamentals of Industrial
+Maintenance & Automation Sensors & Actuators.
+Approximately 11 student worksheets
+Teacher notes and guidance
+
+
