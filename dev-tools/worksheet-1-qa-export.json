@@ -1,0 +1,157 @@
+{
+  "worksheet": {
+    "id": 1,
+    "title": "PLC Outputs",
+    "description": "Understanding PLC output types and their applications",
+    "course": "CP6211 Industrial Maintenance",
+    "module": "Matrix PLC LOGO! Module (IM3214)",
+    "topic": "PLC Outputs - Transistor vs Relay",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What are the two main types of PLC outputs?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Low-current transistor outputs and high-current relay outputs"
+          },
+          {
+            "key": "B", 
+            "text": "Digital and analog outputs"
+          },
+          {
+            "key": "C",
+            "text": "AC and DC outputs"
+          },
+          {
+            "key": "D",
+            "text": "Input mm output signals"
+          }
+        ],
+        "correctAnswer": "A",
+        "correctAnswerText": "Low-current transistor outputs and high-current relay outputs",
+        "explanation": "PLCs typically have two main output types: transistor outputs for low-current control signals and relay outputs for higher-current loads."
+      },
+      {
+        "id": 2,
+        "question": "What are transistor outputs best suited for?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Driving high-power motors"
+          },
+          {
+            "key": "B",
+            "text": "Driving signals to other control devices"
+          },
+          {
+            "key": "C", 
+            "text": "Operating heavy machinery"
+          },
+          {
+            "key": "D",
+            "text": "Powering indicator beacons"
+          }
+        ],
+        "correctAnswer": "B",
+        "correctAnswerText": "Driving signals to other control devices",
+        "explanation": "Transistor outputs are ideal for sending control signals to other devices due to their fast switching and low current capabilities."
+      },
+      {
+        "id": 3,
+        "question": "Why are relay outputs preferred for driving loads like pumps and solenoids?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They are faster than transistor outputs"
+          },
+          {
+            "key": "B",
+            "text": "They are more accurate"
+          },
+          {
+            "key": "C",
+            "text": "They are robust and can handle higher current"
+          },
+          {
+            "key": "D",
+            "text": "They consume less power"
+          }
+        ],
+        "correctAnswer": "C", 
+        "correctAnswerText": "They are robust and can handle higher current",
+        "explanation": "Relay outputs can handle higher currents and are more robust for driving inductive loads like pumps and solenoids."
+      },
+      {
+        "id": 4,
+        "question": "What is a key benefit of relays in control circuits?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They increase signal speed"
+          },
+          {
+            "key": "B", 
+            "text": "They provide electrical isolation between control and power circuits"
+          },
+          {
+            "key": "C",
+            "text": "They reduce system complexity"
+          },
+          {
+            "key": "D",
+            "text": "They eliminate the need for maintenance"
+          }
+        ],
+        "correctAnswer": "B",
+        "correctAnswerText": "They provide electrical isolation between control and power circuits",
+        "explanation": "Relays provide galvanic isolation between the low-voltage control circuit and the higher-voltage power circuit, improving safety."
+      },
+      {
+        "id": 5,
+        "question": "What should you always check before connecting equipment to PLC outputs?",
+        "options": [
+          {
+            "key": "A",
+            "text": "The color of the wires"
+          },
+          {
+            "key": "B",
+            "text": "The brand of the equipment"
+          },
+          {
+            "key": "C",
+            "text": "The voltage and current ratings"
+          },
+          {
+            "key": "D",
+            "text": "The installation date"
+          }
+        ],
+        "correctAnswer": "C",
+        "correctAnswerText": "The voltage and current ratings", 
+        "explanation": "Always verify that the equipment's voltage and current requirements match the PLC output specifications to prevent damage."
+      }
+    ],
+    "metadata": {
+      "totalQuestions": 5,
+      "questionType": "multiple-choice",
+      "passingScore": 80,
+      "timeEstimate": "15-20 minutes",
+      "difficulty": "beginner",
+      "tags": ["PLC", "outputs", "transistor", "relay", "industrial maintenance"],
+      "learningObjectives": [
+        "Identify the two main types of PLC outputs",
+        "Understand when to use transistor vs relay outputs", 
+        "Recognize safety considerations for PLC output connections",
+        "Apply knowledge of output ratings to equipment selection"
+      ]
+    },
+    "exportInfo": {
+      "exportedDate": "2025-08-15",
+      "exportedBy": "GitHub Copilot",
+      "sourceFile": "worksheet-1.html",
+      "version": "2.7"
+    }
+  }
+}

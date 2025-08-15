@@ -10,7 +10,6 @@
   <link rel="manifest" href="manifest.json">
   <script src="worksheet-core.js"></script>
   <script src="worksheet-tracking.js"></script>
-  <script src="json-question-loader.js"></script>
   <script defer src="shared-navigation.js"></script>
   <script defer src="pwa-install.js"></script>
   <style>
@@ -277,171 +276,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   
 <script>
-// Dynamic JSON Question Loading System
-document.addEventListener('DOMContentLoaded', async function() {
-  console.log('Initializing dynamic JSON-based worksheet...');
-  
-  try {
-    // Load questions from external JSON file
-    const response = await fetch('./dev-tools/worksheet-1-qa-export.json');
-    
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
-    
-    const data = await response.json();
-    const worksheetData = data.worksheet;
-    const questions = worksheetData.questions;
-    
-    // Hide loading indicator
-    const loadingIndicator = document.querySelector('.json-loading-indicator');
-    if (loadingIndicator) {
-      loadingIndicator.style.display = 'none';
-    }
-    
-    // Render questions directly
-    renderQuestions(questions, worksheetData);
-    
-    console.log('JSON questions loaded successfully!');
-    console.log('Worksheet Data:', worksheetData.title);
-    console.log('Total Questions:', worksheetData.questions.length);
-    
-  } catch (error) {
-    console.error('Failed to load JSON questions:', error);
-    
-    // Show error message
-    const loadingIndicator = document.querySelector('.json-loading-indicator');
-    if (loadingIndicator) {
-      loadingIndicator.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error loading questions: ' + error.message + '<br><small>Make sure you\'re running a local server (python -m http.server 8000)</small>';
-      loadingIndicator.style.color = '#f44336';
-    }
-  }
-  
-  // Initialize step tracking
-  initializeStepTracking();
-});
-
-// Global variable to store loaded worksheet data
-let currentWorksheetData = null;
-
-// Render questions function
-function renderQuestions(questions, worksheetData) {
-  currentWorksheetData = worksheetData;
-  const container = document.querySelector('.questions-content');
-  if (!container) {
-    console.error('Questions container not found');
-    return;
-  }
-
-  // Clear existing content
-  container.innerHTML = '';
-
-  // Render each question
-  questions.forEach((question) => {
-    const questionHTML = generateQuestionHTML(question);
-    container.insertAdjacentHTML('beforeend', questionHTML);
-  });
-}
-
-// Generate HTML for a single question
-function generateQuestionHTML(question) {
-  const optionsHTML = question.options.map(option => `
-    <label class="option-label">
-      <input type="radio" name="question-${question.id}" value="${option.key}" class="option-radio">
-      <span class="option-text">${option.key}) ${option.text}</span>
-    </label>
-  `).join('');
-
-  return `
-    <div class="question-item" data-question="${question.id}">
-      <h4>Question ${question.id}: ${question.question}</h4>
-      <div class="multiple-choice-options">
-        ${optionsHTML}
-      </div>
-      <div class="question-actions">
-        <button class="submit-question-btn" onclick="submitAnswer(${question.id})">Submit Answer</button>
-      </div>
-      <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
-        <strong style="color: #4CAF50;">Correct Answer:</strong> ${question.correctAnswerText}
-        ${question.explanation ? `<br><br><em>Explanation:</em> ${question.explanation}` : ''}
-      </div>
-    </div>
-  `;
-}
-
-// Submit answer function
-function submitAnswer(questionNumber) {
-  if (!currentWorksheetData) {
-    console.error('Worksheet data not loaded');
-    return;
-  }
-  
-  const answerInput = document.querySelector(`[data-question="${questionNumber}"]`);
-  if (!answerInput) return;
-  
-  const selectedOption = document.querySelector(`input[name="question-${questionNumber}"]:checked`);
-  if (!selectedOption) {
-    alert('Please select an answer before submitting.');
-    return;
-  }
-  
-  const answer = selectedOption.value;
-  const question = currentWorksheetData.questions.find(q => q.id === questionNumber);
-  
-  if (!question) {
-    console.error('Question not found:', questionNumber);
-    return;
-  }
-  
-  // Save with enhanced tracking
-  if (typeof worksheetTracker !== 'undefined') {
-    worksheetTracker.saveAnswer(currentWorksheetData.id, questionNumber, answer, 'maintenance');
-  }
-  
-  // Check if the answer is correct
-  const isCorrect = question.correctAnswer === answer;
-  
-  // Show the correct answer
-  const correctAnswerDiv = answerInput.querySelector('.correct-answer');
-  if (correctAnswerDiv) {
-    correctAnswerDiv.style.display = 'block';
-  }
-  
-  // Disable all options for this question
-  const allOptions = answerInput.querySelectorAll('input[type="radio"]');
-  allOptions.forEach(option => option.disabled = true);
-  
-  // Hide the submit button
-  const submitBtn = answerInput.querySelector('.submit-question-btn');
-  if (submitBtn) {
-    submitBtn.style.display = 'none';
-  }
-  
-  // Update tracking
-  if (typeof worksheetTracker !== 'undefined') {
-    worksheetTracker.setQuestionCompleted(currentWorksheetData.id, questionNumber, isCorrect);
-  }
-  
-  // Provide visual feedback
-  showAnswerFeedback(answerInput, isCorrect);
-  
-  console.log(`Question ${questionNumber}: ${isCorrect ? 'Correct' : 'Incorrect'} (Answer: ${answer}, Correct: ${question.correctAnswer})`);
-}
-
-// Show visual feedback for answer submission
-function showAnswerFeedback(questionElement, isCorrect) {
-  const feedbackClass = isCorrect ? 'answer-correct' : 'answer-incorrect';
-  questionElement.classList.add(feedbackClass);
-  
-  // Add temporary border color
-  questionElement.style.borderLeft = `4px solid ${isCorrect ? '#4CAF50' : '#f44336'}`;
-  questionElement.style.backgroundColor = isCorrect ? 'rgba(76, 175, 80, 0.1)' : 'rgba(244, 67, 54, 0.1)';
-  
-  // Remove feedback after animation
-  setTimeout(() => {
-    questionElement.style.backgroundColor = '';
-  }, 2000);
-}
+// Embedded JSON data to avoid CORS issues with file:// protocol
+const worksheetJSONData = {
   "worksheet": {
     "id": 1,
     "title": "PLC Outputs",
@@ -468,7 +304,7 @@ function showAnswerFeedback(questionElement, isCorrect) {
           },
           {
             "key": "D",
-            "text": "Input mm output signals"
+            "text": "Input hello output signals"
           }
         ],
         "correctAnswer": "A",
@@ -577,6 +413,165 @@ function showAnswerFeedback(questionElement, isCorrect) {
       }
     ],
     "metadata": {
+      "totalQuestions": 5,
+      "questionType": "multiple-choice",
+      "passingScore": 80,
+      "timeEstimate": "15-20 minutes",
+      "difficulty": "beginner",
+      "tags": ["PLC", "outputs", "transistor", "relay", "industrial maintenance"]
+    }
+  }
+};
+
+// Enhanced initialization for embedded JSON questions
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Initializing embedded JSON-based worksheet...');
+  
+  try {
+    // Use embedded JSON data instead of fetching
+    const worksheetData = worksheetJSONData;
+    const questions = worksheetData.worksheet.questions;
+    
+    // Hide loading indicator
+    const loadingIndicator = document.querySelector('.json-loading-indicator');
+    if (loadingIndicator) {
+      loadingIndicator.style.display = 'none';
+    }
+    
+    // Render questions directly
+    renderQuestions(questions, worksheetData);
+    
+    console.log('JSON questions loaded successfully!');
+    console.log('Worksheet Data:', worksheetData.worksheet.title);
+    console.log('Total Questions:', worksheetData.worksheet.questions.length);
+    
+  } catch (error) {
+    console.error('Failed to load embedded questions:', error);
+    
+    // Show error message
+    const loadingIndicator = document.querySelector('.json-loading-indicator');
+    if (loadingIndicator) {
+      loadingIndicator.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error loading questions: ' + error.message;
+      loadingIndicator.style.color = '#f44336';
+    }
+  }
+  
+  // Initialize step tracking
+  initializeStepTracking();
+});
+
+// Render questions function
+function renderQuestions(questions, worksheetData) {
+  const container = document.querySelector('.questions-content');
+  if (!container) {
+    console.error('Questions container not found');
+    return;
+  }
+
+  // Clear existing content
+  container.innerHTML = '';
+
+  // Render each question
+  questions.forEach((question) => {
+    const questionHTML = generateQuestionHTML(question);
+    container.insertAdjacentHTML('beforeend', questionHTML);
+  });
+}
+
+// Generate HTML for a single question
+function generateQuestionHTML(question) {
+  const optionsHTML = question.options.map(option => `
+    <label class="option-label">
+      <input type="radio" name="question-${question.id}" value="${option.key}" class="option-radio">
+      <span class="option-text">${option.key}) ${option.text}</span>
+    </label>
+  `).join('');
+
+  return `
+    <div class="question-item" data-question="${question.id}">
+      <h4>Question ${question.id}: ${question.question}</h4>
+      <div class="multiple-choice-options">
+        ${optionsHTML}
+      </div>
+      <div class="question-actions">
+        <button class="submit-question-btn" onclick="submitAnswer(${question.id})">Submit Answer</button>
+      </div>
+      <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
+        <strong style="color: #4CAF50;">Correct Answer:</strong> ${question.correctAnswerText}
+        ${question.explanation ? `<br><br><em>Explanation:</em> ${question.explanation}` : ''}
+      </div>
+    </div>
+  `;
+}
+
+// Submit answer function
+function submitAnswer(questionNumber) {
+  const answerInput = document.querySelector(`[data-question="${questionNumber}"]`);
+  if (!answerInput) return;
+  
+  const selectedOption = document.querySelector(`input[name="question-${questionNumber}"]:checked`);
+  if (!selectedOption) {
+    alert('Please select an answer before submitting.');
+    return;
+  }
+  
+  const answer = selectedOption.value;
+  const question = worksheetJSONData.worksheet.questions.find(q => q.id === questionNumber);
+  
+  if (!question) {
+    console.error('Question not found:', questionNumber);
+    return;
+  }
+  
+  // Save with enhanced tracking
+  if (typeof worksheetTracker !== 'undefined') {
+    worksheetTracker.saveAnswer(worksheetJSONData.worksheet.id, questionNumber, answer, 'maintenance');
+  }
+  
+  // Check if the answer is correct
+  const isCorrect = question.correctAnswer === answer;
+  
+  // Show the correct answer
+  const correctAnswerDiv = answerInput.querySelector('.correct-answer');
+  if (correctAnswerDiv) {
+    correctAnswerDiv.style.display = 'block';
+  }
+  
+  // Disable all options for this question
+  const allOptions = answerInput.querySelectorAll('input[type="radio"]');
+  allOptions.forEach(option => option.disabled = true);
+  
+  // Hide the submit button
+  const submitBtn = answerInput.querySelector('.submit-question-btn');
+  if (submitBtn) {
+    submitBtn.style.display = 'none';
+  }
+  
+  // Update tracking
+  if (typeof worksheetTracker !== 'undefined') {
+    worksheetTracker.setQuestionCompleted(worksheetJSONData.worksheet.id, questionNumber, isCorrect);
+  }
+  
+  // Provide visual feedback
+  showAnswerFeedback(answerInput, isCorrect);
+  
+  console.log(`Question ${questionNumber}: ${isCorrect ? 'Correct' : 'Incorrect'} (Answer: ${answer}, Correct: ${question.correctAnswer})`);
+}
+
+// Show visual feedback for answer submission
+function showAnswerFeedback(questionElement, isCorrect) {
+  const feedbackClass = isCorrect ? 'answer-correct' : 'answer-incorrect';
+  questionElement.classList.add(feedbackClass);
+  
+  // Add temporary border color
+  questionElement.style.borderLeft = `4px solid ${isCorrect ? '#4CAF50' : '#f44336'}`;
+  questionElement.style.backgroundColor = isCorrect ? 'rgba(76, 175, 80, 0.1)' : 'rgba(244, 67, 54, 0.1)';
+  
+  // Remove feedback after animation
+  setTimeout(() => {
+    questionElement.style.backgroundColor = '';
+  }, 2000);
+}
 
 // Step tracking functions
 function initializeStepTracking() {
@@ -642,6 +637,21 @@ function initializeStepTracking() {
       }
     });
   }, 100);
+}
+
+// Utility functions
+function getUrlParameter(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
+function getWorksheetIdFromUrl() {
+  const match = window.location.pathname.match(/worksheet-(\d+)/);
+  return match ? parseInt(match[1]) : 1;
+}
+
+function saveAnswer(questionNumber, answer) {
+  localStorage.setItem(`worksheet-1-question-${questionNumber}`, answer);
 }
 </script>
 </body>
