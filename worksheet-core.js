@@ -157,7 +157,7 @@ function renderMaintenanceWorksheet(scenario) {
             ${scenario.image ? `
             <div class="system-diagram" style="text-align: center; margin: 20px 0;">
               <figure>
-                <img src="assets/maintenance/${scenario.image}" alt="${scenario.title}" style="max-width: 400px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
+                <img src="assets/worksheets/${scenario.image}" alt="${scenario.title}" style="max-width: 400px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
                 <figcaption style="color: #FFFFFF; margin-top: 10px; font-style: italic;">${scenario.title} System Diagram</figcaption>
               </figure>
             </div>
