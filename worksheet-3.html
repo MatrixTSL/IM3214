@@ -12,6 +12,102 @@
   <script src="worksheet-tracking.js"></script>
   <script defer src="shared-navigation.js"></script>
   <script defer src="pwa-install.js"></script>
+  
+  <!-- Local styles for Worksheet 3 image responsiveness -->
+  <style>
+    /* 4-column layout fix for introduction section */
+    .introduction-content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    
+    .introduction-text {
+      grid-column: 1 / 3;
+    }
+    
+    .introduction-image {
+      grid-column: 3 / 5;
+      overflow: hidden;
+      border-radius: 8px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    
+    .introduction-image .system-diagram {
+      overflow: hidden;
+      border-radius: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .introduction-image .system-diagram img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      max-height: 300px !important;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    
+    .worksheet-image-container {
+      margin: 20px 0;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 15px;
+      border: 1px solid rgba(58, 140, 230, 0.2);
+    }
+    
+    .worksheet-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .image-caption {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #cccccc;
+      font-style: italic;
+      text-align: center;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .worksheet-image-container {
+        margin: 15px 0;
+        padding: 10px;
+      }
+      
+      .worksheet-image {
+        max-width: 95%;
+      }
+      
+      .image-caption {
+        font-size: 0.85em;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .worksheet-image-container {
+        margin: 10px 0;
+        padding: 8px;
+      }
+      
+      .worksheet-image {
+        max-width: 100%;
+      }
+      
+      .image-caption {
+        font-size: 0.8em;
+      }
+    }
+  </style>
 
 </head>
 <body>
@@ -58,7 +154,12 @@
     <div class="worksheet-section over-to-you-section">
       <h2 class="section-header"><i class="fas fa-hands-helping"></i> 2. Over To You</h2>
       <div class="worksheet-content">
-        <p><strong>Follow these steps to explore PWM motor speed control:</strong></p>
+        <p><strong>This worksheet has two parts. Complete Part 1 first, then move to Part 2:</strong></p>
+        
+        <!-- Part 1 -->
+        <div class="part-section">
+          <h3 class="part-header"><i class="fas fa-play-circle"></i> Part 1: Basic PWM with LEDs</h3>
+          <p><strong>Follow these steps to explore basic PWM control:</strong></p>
 
         <div class="steps-container">
           <div class="step-card" data-step="1">
@@ -145,6 +246,77 @@
             </div>
           </div>
         </div>
+        </div>
+        
+        <!-- Part 2 -->
+        <div class="part-section">
+          <h3 class="part-header"><i class="fas fa-cogs"></i> Part 2: Motor Control with FET</h3>
+          <p><strong>Now let's explore motor control using Field Effect Transistors (FETs):</strong></p>
+
+          <!-- Part 2 Image -->
+          <div class="worksheet-image-container">
+            <img src="assets/worksheets/ws3-1.png" alt="Worksheet 3 Part 2 - Motor Control with FET Circuit" class="worksheet-image">
+            <p class="image-caption">Motor control circuit using FET for current amplification</p>
+          </div>
+
+        <div class="steps-container">
+          <div class="step-card" data-step="7">
+            <div class="step-number">7</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Modify the Circuit</h4>
+                <label class="step-checkbox">
+                  <input type="checkbox" class="step-complete-checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <p>Modify your circuit so that Output 2 feeds a FET (Field Effect Transistor) connected to a motor. This creates a current amplification stage between the PLC output and the motor.</p>
+            </div>
+          </div>
+
+          <div class="step-card" data-step="8">
+            <div class="step-number">8</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Test Motor Control</h4>
+                <label class="step-checkbox">
+                  <input type="checkbox" class="step-complete-checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <p>Run the same PWM program and observe how the motor responds to the duty cycle changes. Notice any differences in behavior compared to LED control.</p>
+            </div>
+          </div>
+
+          <div class="step-card" data-step="9">
+            <div class="step-number">9</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Compare Functionality</h4>
+                <label class="step-checkbox">
+                  <input type="checkbox" class="step-complete-checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <p>Is there any difference in the functionality of the program when controlling a motor vs. an LED? Observe the motor's response to different duty cycles.</p>
+            </div>
+          </div>
+
+          <div class="step-card" data-step="10">
+            <div class="step-number">10</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Monitor Current Draw</h4>
+                <label class="step-checkbox">
+                  <input type="checkbox" class="step-complete-checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <p>If possible, monitor the current draw of the motor at different duty cycles. Notice how the FET amplifies the small PLC output current to drive the larger motor current.</p>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
 
@@ -183,6 +355,17 @@
           </div>
         </div>
 
+        <!-- New FET and Motor Control Card -->
+        <div class="explanation-card">
+          <div class="card-header">
+            <i class="fas fa-microchip"></i>
+            <h3>FETs and Motor Control</h3>
+          </div>
+          <div class="card-content">
+            <p>FETs (Field Effect Transistors) are useful current amplifiers. When a controller needs to switch larger currents quickly, external transistor drivers like FETs are needed. Transistors switch much faster than relays and can handle the rapid switching required for PWM. The motor outputs of controllers are typically either simple FETs or a grid of FETs that can both sink and source current. Understanding the internal circuitry of your controller is essential to understand its capabilities.</p>
+          </div>
+        </div>
+
      </div>
    </div>
      <!-- Key Takeaways Section -->
@@ -196,6 +379,10 @@
          <li>PWM is widely used in industry for motor drives, LED dimming, and heating control.</li>
          <li>Variable frequency drives (VFDs) often use PWM input signals for precise motor control.</li>
          <li>Understanding PWM is essential for troubleshooting variable speed systems in automation.</li>
+         <li>FETs (Field Effect Transistors) act as current amplifiers for motor control applications.</li>
+         <li>Transistors switch much faster than relays and are ideal for PWM applications.</li>
+         <li>External transistor drivers are needed when controllers must switch larger currents quickly.</li>
+         <li>Understanding your controller's internal circuitry is crucial for proper motor control implementation.</li>
        </ul>
      </div>
 
@@ -340,6 +527,90 @@
           </div>
           <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
             <strong style="color: #4CAF50;">Correct Answer:</strong> A) PWM signals are often used as control inputs to VFDs for precise motor speed control.
+          </div>
+        </div>
+        
+        <div class="question-item" data-question="6">
+          <h4>Question 6: What is the main purpose of using a FET in motor control applications?</h4>
+          <div class="multiple-choice-options">
+            <label class="option-label">
+              <input type="radio" name="question-6" value="A" class="option-radio">
+              <span class="option-text">A) To reduce the motor speed</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-6" value="B" class="option-radio">
+              <span class="option-text">B) To act as a current amplifier between the PLC output and motor</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-6" value="C" class="option-radio">
+              <span class="option-text">C) To increase the voltage to the motor</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-6" value="D" class="option-radio">
+              <span class="option-text">D) To replace the PLC entirely</span>
+            </label>
+          </div>
+          <div class="question-actions">
+            <button class="submit-question-btn" onclick="submitAnswer(6)">Submit Answer</button>
+          </div>
+          <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) To act as a current amplifier between the PLC output and motor.
+          </div>
+        </div>
+        
+        <div class="question-item" data-question="7">
+          <h4>Question 7: Why are transistors preferred over relays for PWM applications?</h4>
+          <div class="multiple-choice-options">
+            <label class="option-label">
+              <input type="radio" name="question-7" value="A" class="option-radio">
+              <span class="option-text">A) Transistors are cheaper than relays</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-7" value="B" class="option-radio">
+              <span class="option-text">B) Transistors switch much faster than relays and can handle rapid PWM switching</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-7" value="C" class="option-radio">
+              <span class="option-text">C) Transistors use less power</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-7" value="D" class="option-radio">
+              <span class="option-text">D) Transistors are easier to install</span>
+            </label>
+          </div>
+          <div class="question-actions">
+            <button class="submit-question-btn" onclick="submitAnswer(7)">Submit Answer</button>
+          </div>
+          <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) Transistors switch much faster than relays and can handle rapid PWM switching.
+          </div>
+        </div>
+        
+        <div class="question-item" data-question="8">
+          <h4>Question 8: What is the key difference between controlling an LED vs. a motor with PWM?</h4>
+          <div class="multiple-choice-options">
+            <label class="option-label">
+              <input type="radio" name="question-8" value="A" class="option-radio">
+              <span class="option-text">A) LEDs require more current than motors</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-8" value="B" class="option-radio">
+              <span class="option-text">B) Motors typically require current amplification through transistors, while LEDs can be driven directly</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-8" value="C" class="option-radio">
+              <span class="option-text">C) Motors only work with analog signals</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="question-8" value="D" class="option-radio">
+              <span class="option-text">D) There is no difference - they work exactly the same</span>
+            </label>
+          </div>
+          <div class="question-actions">
+            <button class="submit-question-btn" onclick="submitAnswer(8)">Submit Answer</button>
+          </div>
+          <div class="correct-answer" style="display: none; margin-top: 15px; padding: 15px; background: #1a2f1a; border-radius: 4px; border-left: 3px solid #4CAF50;">
+            <strong style="color: #4CAF50;">Correct Answer:</strong> B) Motors typically require current amplification through transistors, while LEDs can be driven directly.
           </div>
         </div>
       </div>
