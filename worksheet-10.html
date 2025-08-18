@@ -269,6 +269,27 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   
+  <!-- Bottom Navigation -->
+  <div class="worksheet-bottom-nav">
+    <div class="worksheet-header-content">
+      <div class="worksheet-header-left">
+        <button class="worksheet-nav-btn worksheet-back-btn" onclick="window.location.href='worksheet-9.html'">
+          <i class="fas fa-arrow-left"></i>
+          <span>Previous Worksheet</span>
+        </button>
+      </div>
+       <div class="worksheet-header-center">
+       <h1 class="worksheet-title">Worksheet 10 - Open-Loop Control</h1>
+      </div>
+      <div class="worksheet-header-right">
+        <button class="worksheet-nav-btn worksheet-next-btn" onclick="window.location.href='worksheet-11.html'">
+          <span>Next Worksheet</span>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
   <script>
     // Initialize everything when the DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
@@ -290,30 +311,51 @@
           // Save with enhanced tracking
           worksheetTracker.saveAnswer(10, questionNumber, answer, 'maintenance');
           
-          // Define correct answers for worksheet 10
-          const correctAnswers = {
-            1: 'C',
-            2: 'B',
-            3: 'B'
-          };
-          
-          // Check if the answer is correct
-          const isCorrect = correctAnswers[questionNumber] === answer;
-          
-          // Show the correct answer
+          // Get correct answer from the correct-answer div
           const correctAnswerDiv = answerInput.querySelector('.correct-answer');
+          let correctAnswerText = '';
           if (correctAnswerDiv) {
-            correctAnswerDiv.style.display = 'block';
+            const strongElement = correctAnswerDiv.querySelector('strong');
+            if (strongElement) {
+              correctAnswerText = strongElement.nextSibling.textContent.trim();
+            }
           }
           
-          // Disable all options for this question
-          const allOptions = answerInput.querySelectorAll('input[type="radio"]');
-          allOptions.forEach(option => option.disabled = true);
+          // Determine if answer is correct (extract letter from correct answer)
+          const correctLetterMatch = correctAnswerText.match(/^([A-D])\)/);
+          const correctLetter = correctLetterMatch ? correctLetterMatch[1] : null;
+          const isCorrect = !!correctLetter && answer === correctLetter;
           
-          // Hide the submit button
+          // Style the selected option
+          const allOptions = answerInput.querySelectorAll('.option-label');
+          allOptions.forEach(option => {
+            option.classList.remove('correct', 'incorrect');
+          });
+          
+          if (isCorrect) {
+            selectedOption.closest('.option-label').classList.add('correct');
+          } else {
+            selectedOption.closest('.option-label').classList.add('incorrect');
+            // Also mark the correct option as correct
+            const correctOption = answerInput.querySelector(`input[name="question-${questionNumber}"][value="${correctLetter}"]`);
+            if (correctOption) {
+              correctOption.closest('.option-label').classList.add('correct');
+            }
+          }
+          
           const submitBtn = answerInput.querySelector('.submit-question-btn');
           if (submitBtn) {
-            submitBtn.style.display = 'none';
+            submitBtn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
+            submitBtn.style.background = isCorrect ? '#4CAF50' : '#f44336';
+            setTimeout(() => {
+              submitBtn.textContent = 'Submit Answer';
+              submitBtn.style.background = '#4CAF50';
+            }, 2000);
+          }
+          
+          // Show correct answer
+          if (correctAnswerDiv) {
+            correctAnswerDiv.style.display = 'block';
           }
           
           // Update tracking
