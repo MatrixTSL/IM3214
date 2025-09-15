@@ -39,10 +39,13 @@
        margin: 0;
        padding: 0;
        overflow-x: hidden;
+       overflow-y: auto;
      }
 
      body {
-       min-height: 100vh;
+       height: 100vh;
+       display: flex;
+       flex-direction: column;
      }
 
      .hidden {
@@ -96,11 +99,12 @@
     .hero-section {
       background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
       border-radius: 12px;
-      padding: 30px;
-      margin-bottom: 20px;
+      padding: 25px;
+      margin-bottom: 15px;
       text-align: center;
       border: 2px solid var(--accent-color);
       box-shadow: 0 8px 25px var(--accent-shadow-light);
+      flex-shrink: 0;
     }
 
     .hero-content {
@@ -183,25 +187,26 @@
       box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
     }
 
-                   /* Main Container - Responsive Height */
+                   /* Main Container - Full Height */
       .main-container {
-        min-height: calc(100vh - 120px); /* Minimum height, not fixed */
+        flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        padding: 20px;
+        padding: 15px;
         max-width: 1400px;
         margin: 0 auto;
-        overflow-y: visible; /* Remove scrollbar */
+        overflow-y: auto;
+        height: 100%;
       }
 
            /* Features Section */
       .features-section {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
         flex: 1;
         justify-content: flex-start;
+        min-height: 0;
       }
 
      .feature-card {
@@ -551,15 +556,12 @@
 
            @media (max-width: 768px) {
         .main-container {
-          min-height: calc(100vh - 100px);
-          padding: 15px;
-          justify-content: flex-start;
-          overflow-y: visible;
+          padding: 12px;
         }
         
         .hero-section {
-          padding: 20px;
-          margin-bottom: 15px;
+          padding: 18px;
+          margin-bottom: 12px;
         }
 
         .hero-intro {
@@ -630,15 +632,12 @@
 
            @media (max-width: 480px) {
         .main-container {
-          min-height: calc(100vh - 80px);
           padding: 10px;
-          justify-content: flex-start;
-          overflow-y: visible;
         }
         
         .hero-section {
-          padding: 12px;
-          margin-bottom: 12px;
+          padding: 10px;
+          margin-bottom: 10px;
         }
 
         .hero-intro {
@@ -772,16 +771,6 @@
             </div>
           </div>
 
-                   <div class="feature-card" onclick="openPDF('docs/IM3214 Siemens PLC LOGO! Trainer User Manual.pdf')">
-            <div class="feature-icon">
-              <i class="fas fa-book"></i>
-            </div>
-            <div class="feature-content">
-              <h3>User Manual</h3>
-              <p>Comprehensive user manual for the IM3214 Siemens PLC LOGO! Module.</p>
-              <span class="feature-badge">IM3214</span>
-            </div>
-          </div>
 
                    <div class="feature-card" onclick="openPDF('docs/SP3214 - Siemens PLC LOGO! Trainer Spec Doc.pdf')">
             <div class="feature-icon">
