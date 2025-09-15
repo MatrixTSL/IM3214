@@ -1,0 +1,615 @@
+================================================================================
+WORKSHEET QUESTIONS AND ANSWERS
+CP6211 Industrial Maintenance - Matrix PLC LOGO! Module
+================================================================================
+
+------------------------------------------------------------
+WORKSHEET 1 - BASIC OUTPUTS
+Source: worksheet-1.html
+------------------------------------------------------------
+
+Question 1: What are the two main types of PLC outputs?
+
+  A) Low-current transistor outputs and high-current relay outputs
+  B) Digital and analog outputs
+  C) AC and DC outputs
+  D) Input mm output signals
+
+CORRECT ANSWER: A) Low-current transistor outputs and high-current relay outputs
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: What are transistor outputs best suited for?
+
+  A) Driving high-power motors
+  B) Driving signals to other control devices
+  C) Operating heavy machinery
+  D) Powering indicator beacons
+
+CORRECT ANSWER: B) Driving signals to other control devices
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: Why are relay outputs preferred for driving loads like pumps and solenoids?
+
+  A) They are faster than transistor outputs
+  B) They are more accurate
+  C) They are robust and can handle higher current
+  D) They consume less power
+
+CORRECT ANSWER: C) They are robust and can handle higher current
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 4: What is a key benefit of relays in control circuits?
+
+  A) They increase signal speed
+  B) They provide electrical isolation between control and power circuits
+  C) They reduce system complexity
+  D) They eliminate the need for maintenance
+
+CORRECT ANSWER: B) They provide electrical isolation between control and power circuits
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 5: What should you always check before connecting equipment to PLC outputs?
+
+  A) The color of the wires
+  B) The brand of the equipment
+  C) The voltage and current ratings
+  D) The installation date
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------
+WORKSHEET 10 - OPEN-LOOP CONTROL
+Source: worksheet-10.html
+------------------------------------------------------------
+
+Question 1: What is the main characteristic of an open-loop control system?
+
+  A) It uses feedback to adjust outputs
+  B) It can detect faults automatically
+  C) It controls outputs without feedback from the process
+  D) It requires complex programming
+
+CORRECT ANSWER: C) It controls outputs without feedback from the process.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: How does PWM (Pulse Width Modulation) control motor speed?
+
+  A) By changing the voltage frequency
+  B) By varying the ratio of on-time to off-time in pulses
+  C) By monitoring motor feedback
+  D) By adjusting the current flow
+
+CORRECT ANSWER: B) By varying the ratio of on-time to off-time in pulses.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: What is a limitation of open-loop control systems?
+
+  A) They are too complex to program
+  B) They cannot detect faults like a stuck valve or failed actuator
+  C) They require expensive sensors
+  D) They use too much power
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------
+WORKSHEET 11 - CLOSED-LOOP CONTROL
+Source: worksheet-11.html
+------------------------------------------------------------
+
+Question 1: What is the main advantage of closed-loop control systems over open-loop systems?
+
+  A) They are simpler to program
+  B) They use feedback to automatically correct for errors and disturbances
+  C) They are cheaper to install
+  D) They use less power
+
+CORRECT ANSWER: B) They use feedback to automatically correct for errors and disturbances.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: What component is essential for a closed-loop control system to function?
+
+  A) A feedback sensor to monitor the actual output
+  B) A larger motor
+  C) More expensive components
+  D) Better documentation
+
+CORRECT ANSWER: A) A feedback sensor to monitor the actual output.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: In which applications are closed-loop control systems most essential?
+
+  A) Temperature, pressure, and flow control where accuracy is critical
+  B) Simple on/off lighting systems
+  C) Basic equipment monitoring
+  D) Emergency stop systems
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------
+WORKSHEET 2 - SEQUENCED OUTPUTS
+Source: worksheet-2.html
+------------------------------------------------------------
+
+Question 1: What is a sequenced output system?
+
+  A) A system where outputs turn on and off in a specific order, like traffic lights
+  B) Only simple on/off functions
+  C) Single button operations
+  D) Manual processes only
+
+CORRECT ANSWER: A) A system where outputs turn on and off in a specific order, like traffic lights
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: What happens when you press input I0 in this worksheet?
+
+  A) Nothing happens
+  B) The outputs turn on one by one in a sequence, even after you release the button
+  C) The system shuts down
+  D) All outputs turn on at once
+
+CORRECT ANSWER: B) Red and Amber lights come on together
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: What is a state machine in automation?
+
+  A) A system with defined states and controlled transitions between them
+  B) A machine that makes states
+  C) A button that must be held down
+  D) A system that resets automatically
+
+CORRECT ANSWER: A) A system with defined states and controlled transitions between them
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 4: What controls the timing between traffic light states?
+
+  A) Manual button presses
+  B) Random timing
+  C) Timers programmed in the PLC
+  D) External sensors only
+
+CORRECT ANSWER: C) Timers programmed in the PLC
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 5: Why are sequenced systems important in industrial automation?
+
+  A) They ensure operations happen in the correct order for safety and efficiency
+  B) They're not important
+  C) Only for traffic light systems
+  D) Only for simple systems
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------
+WORKSHEET 3 - PULSE WIDTH MODULATION
+Source: worksheet-3.html
+------------------------------------------------------------
+
+Question 1: What does PWM stand for and what does it control?
+
+  A) Pulse Width Modulation - controls motor speed and lighting by varying duty cycle
+  B) Power Wire Management - controls electrical connections
+  C) Process Water Monitoring - measures temperature
+  D) Pressure Warning Module - controls system power
+
+CORRECT ANSWER: A) Pulse Width Modulation - controls motor speed and lighting by varying duty cycle.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: What does this worksheet’s HMI screen represent?
+
+  A) The output runs at half voltage
+  B) The motor runs at half speed
+  C) The output is 'on' 50% of the time and 'off' 50% of the time
+  D) The system is only half functional
+
+CORRECT ANSWER: C) The output is 'on' 50% of the time and 'off' 50% of the time.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: Why is PWM more efficient than varying voltage directly?
+
+  A) PWM reduces energy waste by using rapid switching instead of continuous voltage regulation
+  B) PWM makes the motor run faster
+  C) PWM uses more electricity
+  D) PWM is not more efficient
+
+CORRECT ANSWER: A) PWM reduces energy waste by using rapid switching instead of continuous voltage regulation.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 4: What applications commonly use PWM in industrial automation?
+
+  A) Only lighting control
+  B) Only temperature sensors
+  C) Only emergency systems
+  D) Variable speed motors, LED dimming, heating elements, and servo positioning
+
+CORRECT ANSWER: D) Variable speed motors, LED dimming, heating elements, and servo positioning.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 5: How does PWM relate to Variable Frequency Drives (VFDs)?
+
+  A) PWM signals are often used as control inputs to VFDs for precise motor speed control
+  B) VFDs cannot use PWM signals
+  C) PWM replaces VFDs completely
+  D) VFDs only work with analog signals
+
+CORRECT ANSWER: A) PWM signals are often used as control inputs to VFDs for precise motor speed control.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 6: What is the main purpose of using a FET in motor control applications?
+
+  A) To reduce the motor speed
+  B) To act as a current amplifier between the PLC output and motor
+  C) To increase the voltage to the motor
+  D) To replace the PLC entirely
+
+CORRECT ANSWER: B) To act as a current amplifier between the PLC output and motor.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 7: Why are transistors preferred over relays for PWM applications?
+
+  A) Transistors are cheaper than relays
+  B) Transistors switch much faster than relays and can handle rapid PWM switching
+  C) Transistors use less power
+  D) Transistors are easier to install
+
+CORRECT ANSWER: B) Transistors switch much faster than relays and can handle rapid PWM switching.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 8: What is the key difference between controlling an LED vs. a motor with PWM?
+
+  A) LEDs require more current than motors
+  B) Motors typically require current amplification through transistors, while LEDs can be driven directly
+  C) Motors only work with analog signals
+  D) There is no difference - they work exactly the same
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------
+WORKSHEET 4 - BASIC INPUTS
+Source: worksheet-4.html
+------------------------------------------------------------
+
+Question 1: What are the two main types of industrial sensors?
+
+  A) Large and small sensors
+  B) Analogue and digital sensors
+  C) Fast and slow sensors
+  D) Expensive and cheap sensors
+
+CORRECT ANSWER: B) Analogue and digital sensors.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: What voltage levels do digital sensors typically provide?
+
+  A) 0V to 10V variable
+  B) 110V AC constant
+  C) 24V DC when active, 0V when inactive
+  D) 230V AC when active
+
+CORRECT ANSWER: C) 24V DC when active, 0V when inactive.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: Why is it important to check sensor type compatibility before installation?
+
+  A) To avoid signal errors and ensure proper operation
+  B) To save money on installation costs
+  C) To make the system look better
+  D) To comply with building codes
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------
+WORKSHEET 5 - PEDESTRIAN CROSSING
+Source: worksheet-5.html
+------------------------------------------------------------
+
+Question 1: Why do pedestrian crossings use timed sequences?
+
+  A) To save energy
+  B) To provide adequate time for pedestrians to cross safely while managing traffic flow
+  C) To make the lights change randomly
+  D) To control system temperature
+
+CORRECT ANSWER: B) To provide adequate time for pedestrians to cross safely while managing traffic flow.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: What is a state machine in PLC control?
+
+  A) A method of controlling sequential operations where each state has specific conditions and transitions
+  B) A type of motor controller
+  C) A hardware component for powering the PLC
+  D) A programming language
+
+CORRECT ANSWER: A) A method of controlling sequential operations where each state has specific conditions and transitions.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: In the pedestrian crossing, what triggers the sequence change?
+
+  A) Temperature changes
+  B) The pedestrian push button and timer expiration
+  C) Power variations
+  D) It means the system is starting up
+  D) Random timing
+
+CORRECT ANSWER: B) The pedestrian push button and timer expiration.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 4: Why are timers essential in industrial automation?
+
+  A) They only control LED brightness
+  B) They manage delays, enforce safety pauses, and coordinate sequential operations
+  C) They are not important in automation
+  D) They only work with specific brands of PLCs
+
+CORRECT ANSWER: B) They manage delays, enforce safety pauses, and coordinate sequential operations.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 5: Why is it important to understand how the LED is programmed?
+
+  A) Because it controls the motor directly
+  B) Because it saves energy
+  C) Because LED behaviour is set in the PLC code and can vary between machines, so reading the manual and understanding the logic is key
+  D) Because it changes colour with time of day
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------
+WORKSHEET 6 - POTENTIOMETERS
+Source: worksheet-6.html
+------------------------------------------------------------
+
+Question 1: What voltage range does a potentiometer typically provide?
+
+  A) 0V to 24V variable voltage
+  B) Only 0V or 24V
+  C) 230V AC
+  D) 110V DC
+
+CORRECT ANSWER: A) 0V to 24V variable voltage.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: What is the main advantage of potentiometers over switches?
+
+  A) They are cheaper
+  B) They are more reliable
+  C) They provide variable control instead of just on/off
+  D) They use less power
+
+CORRECT ANSWER: C) They provide variable control instead of just on/off.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: In industrial systems, potentiometers are commonly used for:
+
+  A) Emergency stops
+  B) Setting speeds, limits, and thresholds
+  C) Power distribution
+  D) Circuit protection
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------
+WORKSHEET 7 - USING SENSORS
+Source: worksheet-7.html
+------------------------------------------------------------
+
+Question 1: What is the main difference between digital and analogue sensors?
+
+  A) Digital sensors are more expensive
+  B) Analogue sensors provide variable voltage signals representing continuous values, while digital sensors provide on/off signals
+  C) There is no difference
+  D) Digital sensors work faster
+
+CORRECT ANSWER: B) Analogue sensors provide variable voltage signals representing continuous values, while digital sensors provide on/off signals.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: What typically happens when a thermistor detects a 1% temperature increase?
+
+  A) The green status LED turns off and the red error LED turns on
+  B) Nothing happens
+  C) The system shuts down completely
+  D) The temperature decreases
+
+CORRECT ANSWER: A) The green status LED turns off and the red error LED turns on.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: What type of object does an inductive sensor detect?
+
+  A) Non‑metal objects
+  B) Metal objects only
+  C) All objects
+  D) Only wooden objects
+
+CORRECT ANSWER: B) Metal objects only.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 4: What caused the fault in the locking sequence during the exercise?
+
+  A) The valve was closed
+  B) The valve was closed
+  C) The pump failed
+  D) The system couldn’t detect the locking pins because the sensor was not triggered
+
+CORRECT ANSWER: D) The system couldn’t detect the locking pins because the sensor was not triggered.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 5: How can engineers test a proximity sensor during troubleshooting?
+
+  A) By placing a metal object in front of the sensor to simulate detection
+  B) By turning off power
+  C) By replacing the PLC
+  D) By changing HMI theme
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------
+WORKSHEET 8 - DETECTING FAULTS 1
+Source: worksheet-8.html
+------------------------------------------------------------
+
+Question 1: Why is fault detection important in safety-critical systems?
+
+  A) To reduce power consumption
+  B) To confirm devices are actually operating, not just being commanded
+  C) To make systems more complex
+  D) To increase costs
+
+CORRECT ANSWER: B) To confirm devices are actually operating, not just being commanded.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: How does current monitoring work for fault detection?
+
+  A) It measures temperature changes
+  B) A small resistor is placed in line with the actuator to detect voltage changes
+  C) It counts the number of operations
+  D) It only works with motors
+
+CORRECT ANSWER: B) A small resistor is placed in line with the actuator to detect voltage changes.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: How does the motor respond as you turn the potentiometer?
+
+  A) The LED turns blue
+  B) The motor stops completely
+  C) The motor speed increases as the potentiometer is turned to the right
+  D) Nothing changes
+
+CORRECT ANSWER: C) The motor speed increases as the potentiometer is turned to the right.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 4: What does applying an offset do to the input signal?
+
+  A) It scales the signal to 0–100%
+  B) It changes the colour of the HMI
+  C) It resets the PLC
+  D) It shifts the signal higher or lower to correct for drift or to fine-tune control
+
+CORRECT ANSWER: D) It shifts the signal higher or lower to correct for drift or to fine-tune control.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 5: Why is scaling (scalar) important in PLC systems?
+
+  A) It reduces energy use
+  B) It adjusts the signal to match real-world values, ensuring the system behaves as expected
+  C) It changes the LED colour
+  D) It disables the sensor
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------
+WORKSHEET 9 - DETECTING FAULTS 2
+Source: worksheet-9.html
+------------------------------------------------------------
+
+Question 1: Why is range-based fault detection important for analogue sensors?
+
+  A) To save power
+  B) To make systems more complex
+  C) To detect sensor failures that would otherwise appear as valid signals
+  D) To reduce maintenance costs
+
+CORRECT ANSWER: C) To detect sensor failures that would otherwise appear as valid signals.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 2: What happens when a sensor signal is outside the valid range of 50-200?
+
+  A) The red fault LED turns on
+  B) Nothing happens
+  C) The system shuts down
+  D) The green LED flashes
+
+CORRECT ANSWER: A) The red fault LED turns on.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 3: Why is a signal converter needed with an RTD sensor?
+
+  A) Because the PLC can't read resistance directly—it needs a 0–10 V voltage signal
+  B) Because the PLC only reads 4–20 mA
+  C) Because the HMI requires it
+  D) Because it saves energy
+
+CORRECT ANSWER: B) Because the PLC can't read resistance directly—it needs a 0–10 V voltage signal.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 4: What does the PLC do with the analogue voltage from the sensor?
+
+  A) It converts the voltage into a raw value, then multiplies it by a scalar to get temperature in °C
+  B) It displays the voltage directly
+  C) It ignores it
+  D) It converts it to pressure
+
+CORRECT ANSWER: D) It converts the voltage into a raw value, then multiplies it by a scalar to get temperature in °C.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 5: What might a raw value near 32,000 mean?
+
+  A) It usually means a fault like a disconnected sensor, wrong input type, or wiring issue
+  B) It means the valve is closed
+  C) It means the pump is running
+  D) It means the HMI is off
+
+CORRECT ANSWER: 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+================================================================================
+SUMMARY: 11 worksheets, 50 questions total
+================================================================================
